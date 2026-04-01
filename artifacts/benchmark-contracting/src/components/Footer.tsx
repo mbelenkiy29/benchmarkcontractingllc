@@ -1,5 +1,6 @@
 import React from "react";
 import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import logoSrc from "@assets/Benchmark_1775063903268.png";
 
 export default function Footer() {
   const scrollTo = (id: string) => {
@@ -14,9 +15,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <div className="flex items-center gap-1 cursor-pointer" onClick={() => scrollTo("home")}>
-              <span className="text-2xl font-bold tracking-tight text-primary">Benchmark</span>
-              <span className="text-2xl font-bold tracking-tight text-white">Contracting</span>
+            <div className="cursor-pointer" onClick={() => scrollTo("home")}>
+              <img src={logoSrc} alt="Benchmark Contracting Group" className="h-10 w-auto" />
             </div>
             <p className="text-white/60 leading-relaxed max-w-sm">
               New York's trusted partner for high-end residential, commercial, and luxury retail construction. Excellence built from the ground up.

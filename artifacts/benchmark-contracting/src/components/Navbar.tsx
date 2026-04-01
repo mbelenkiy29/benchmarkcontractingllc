@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import logoSrc from "@assets/Benchmark_1775063903268.png";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -31,9 +32,8 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-1 cursor-pointer" onClick={() => scrollTo("home")}>
-            <span className="text-xl md:text-2xl font-bold tracking-tight text-primary">Benchmark</span>
-            <span className="text-xl md:text-2xl font-bold tracking-tight text-white">Contracting Group</span>
+          <div className="cursor-pointer" onClick={() => scrollTo("home")}>
+            <img src={logoSrc} alt="Benchmark Contracting Group" className="h-10 md:h-12 w-auto" />
           </div>
 
           {/* Desktop Nav */}
