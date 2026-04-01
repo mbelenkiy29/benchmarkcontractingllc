@@ -42,3 +42,9 @@ id = "5iApAJJgIGM7vANaa3F5T"
 uri = "file://artifacts/benchmark-contracting/public/images/project-groundup.png"
 type = "image"
 title = "Commercial ground-up site"
+
+[[generated]]
+id = "375FP3bh1zLfJBaqrTWbF"
+uri = "file://artifacts/benchmark-contracting/public/images/project-louis-vuitton.png"
+type = "image"
+title = "louis vuitton nyc flagship"

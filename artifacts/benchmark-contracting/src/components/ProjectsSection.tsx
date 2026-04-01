@@ -3,6 +3,14 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
+    image: "/images/project-louis-vuitton.png",
+    title: "Louis Vuitton NYC",
+    category: "Luxury Retail",
+    description: "Contributed to the construction of the iconic new Louis Vuitton flagship on Fifth Avenue — a landmark in luxury retail architecture.",
+    location: "Fifth Avenue, New York City",
+    featured: true,
+  },
+  {
     image: "/images/project-retail.png",
     title: "Luxury Flagship Retail",
     category: "Luxury Retail",
@@ -85,22 +93,30 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group relative overflow-hidden rounded-sm bg-zinc-900 border border-white/10 hover:border-primary/40 transition-all duration-300 cursor-pointer"
+              className={`group relative overflow-hidden rounded-sm bg-zinc-900 border transition-all duration-300 cursor-pointer ${
+                (project as any).featured
+                  ? "md:col-span-2 lg:col-span-3 border-primary/50 hover:border-primary"
+                  : "border-white/10 hover:border-primary/40"
+              }`}
             >
-              <div className="aspect-[4/3] overflow-hidden relative">
+              <div className={`overflow-hidden relative ${(project as any).featured ? "aspect-[16/7]" : "aspect-[4/3]"}`}>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                {/* Orange hover overlay */}
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-all duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-4 left-4 flex items-center gap-2">
                   <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm ${categoryColors[project.category]}`}>
                     {project.category}
                   </span>
+                  {(project as any).featured && (
+                    <span className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm bg-white/10 text-white/80 border border-white/20">
+                      Featured Project
+                    </span>
+                  )}
                 </div>
 
                 <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-2 group-hover:translate-y-0">
@@ -108,11 +124,11 @@ export default function ProjectsSection() {
                 </div>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">
+              <div className={`p-6 ${(project as any).featured ? "md:p-8" : ""}`}>
+                <h3 className={`font-bold text-white mb-2 group-hover:text-primary transition-colors ${(project as any).featured ? "text-2xl md:text-3xl" : "text-lg"}`}>
                   {project.title}
                 </h3>
-                <p className="text-sm text-white/60 mb-3 leading-relaxed">
+                <p className={`text-white/60 mb-3 leading-relaxed ${(project as any).featured ? "text-base max-w-2xl" : "text-sm"}`}>
                   {project.description}
                 </p>
                 <div className="flex items-center gap-2 text-xs text-white/40 uppercase tracking-wider">
