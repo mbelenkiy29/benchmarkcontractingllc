@@ -32,8 +32,17 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="cursor-pointer" onClick={() => scrollTo("home")}>
-            <img src={logoSrc} alt="Benchmark Contracting Group" className="h-20 md:h-24 w-auto" />
+          <div
+            className="cursor-pointer overflow-hidden relative flex-shrink-0"
+            onClick={() => scrollTo("home")}
+            style={{ width: "260px", height: "56px" }}
+          >
+            <img
+              src={logoSrc}
+              alt="Benchmark Contracting Group"
+              className="absolute"
+              style={{ width: "260px", top: "-100px" }}
+            />
           </div>
 
           {/* Desktop Nav */}
