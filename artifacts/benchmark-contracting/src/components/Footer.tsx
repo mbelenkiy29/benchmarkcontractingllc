@@ -70,11 +70,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-white/60">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <a href="tel:2125550100" className="hover:text-white transition-colors">(212) 555-0100</a>
+                <a href="tel:3473235535" className="hover:text-white transition-colors">(347) 323-5535</a>
               </li>
               <li className="flex items-center gap-3 text-white/60">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <a href="mailto:info@benchmarkcontractinggroup.com" className="hover:text-white transition-colors">info@benchmarkcontractinggroup.com</a>
+                <a href="mailto:info@benchmarkcontractingllc.com" className="hover:text-white transition-colors">info@benchmarkcontractingllc.com</a>
               </li>
             </ul>
           </div>

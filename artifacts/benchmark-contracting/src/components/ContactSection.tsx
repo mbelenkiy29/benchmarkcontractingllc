@@ -96,11 +96,11 @@ export default function ContactSection() {
                   <div>
                     <div className="text-xs text-white/40 uppercase tracking-wider mb-1 font-semibold">Phone</div>
                     <a
-                      href="tel:2125550100"
+                      href="tel:3473235535"
                       data-testid="contact-phone"
                       className="text-white hover:text-primary transition-colors font-medium text-lg"
                     >
-                      (212) 555-0100
+                      (347) 323-5535
                     </a>
                   </div>
                 </div>
@@ -112,11 +112,11 @@ export default function ContactSection() {
                   <div>
                     <div className="text-xs text-white/40 uppercase tracking-wider mb-1 font-semibold">Email</div>
                     <a
-                      href="mailto:info@benchmarkcontractinggroup.com"
+                      href="mailto:info@benchmarkcontractingllc.com"
                       data-testid="contact-email"
                       className="text-white hover:text-primary transition-colors font-medium"
                     >
-                      info@benchmarkcontractinggroup.com
+                      info@benchmarkcontractingllc.com
                     </a>
                   </div>
                 </div>
