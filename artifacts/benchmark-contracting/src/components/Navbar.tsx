@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="cursor-pointer" onClick={() => scrollTo("home")}>
-            <img src={logoSrc} alt="Benchmark Contracting Group" className="h-10 md:h-12 w-auto" />
+            <img src={logoSrc} alt="Benchmark Contracting Group" className="h-20 md:h-24 w-auto" />
           </div>
 
           {/* Desktop Nav */}
