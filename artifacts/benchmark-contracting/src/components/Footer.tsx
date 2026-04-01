@@ -1,23 +1,39 @@
-import React from "react";
+import { Link } from "wouter";
 import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import logoSrc from "@assets/Benchmark_1775063903268.png";
 
-export default function Footer() {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/contact" },
+];
 
+const serviceLinks = [
+  "Pre-Construction",
+  "Project Management",
+  "Luxury Residential",
+  "Commercial Build-outs",
+  "Retail Flagships",
+];
+
+export default function Footer() {
   return (
     <footer className="bg-black text-white border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <div className="cursor-pointer" onClick={() => scrollTo("home")}>
-              <img src={logoSrc} alt="Benchmark Contracting Group" className="h-10 w-auto" />
-            </div>
+            <Link href="/">
+              <div className="cursor-pointer overflow-hidden relative" style={{ width: "200px", height: "44px" }}>
+                <img
+                  src={logoSrc}
+                  alt="Benchmark Contracting Group"
+                  className="absolute"
+                  style={{ width: "200px", top: "-77px" }}
+                />
+              </div>
+            </Link>
             <p className="text-white/60 leading-relaxed max-w-sm">
               New York's trusted partner for high-end residential, commercial, and luxury retail construction. Excellence built from the ground up.
             </p>
@@ -37,14 +53,13 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-4">
-              {["Home", "About Us", "Services", "Projects", "Contact"].map((item) => (
-                <li key={item}>
-                  <button 
-                    onClick={() => scrollTo(item.toLowerCase().replace(" ", ""))}
-                    className="text-white/60 hover:text-primary transition-colors"
-                  >
-                    {item}
-                  </button>
+              {quickLinks.map(({ label, href }) => (
+                <li key={href}>
+                  <Link href={href}>
+                    <span className="text-white/60 hover:text-primary transition-colors cursor-pointer">
+                      {label}
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -53,11 +68,13 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Services</h3>
             <ul className="space-y-4 text-white/60">
-              <li className="hover:text-white transition-colors cursor-default">Pre-Construction</li>
-              <li className="hover:text-white transition-colors cursor-default">Project Management</li>
-              <li className="hover:text-white transition-colors cursor-default">Luxury Residential</li>
-              <li className="hover:text-white transition-colors cursor-default">Commercial Build-outs</li>
-              <li className="hover:text-white transition-colors cursor-default">Retail Flagships</li>
+              {serviceLinks.map((s) => (
+                <li key={s}>
+                  <Link href="/services">
+                    <span className="hover:text-primary transition-colors cursor-pointer">{s}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
