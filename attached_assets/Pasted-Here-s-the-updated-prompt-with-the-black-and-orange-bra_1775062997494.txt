@@ -1,0 +1,32 @@
+Here's the updated prompt with the black and orange branding worked in:
+
+Build me a modern, professional website for Benchmark Contracting Group, a general contracting company based in New York. The brand colors are black and orange. Use a dark color scheme with a black/near-black background, white text, and orange (#FF6600 or similar construction orange) as the primary accent color for buttons, highlights, hover states, dividers, and icons. The site should feel premium, high-end, and trustworthy. Fully responsive, single-page with smooth scroll navigation.
+Header/Navigation:
+Fixed top navbar with a black background. Company name "Benchmark Contracting Group" with orange accent on "Benchmark." Nav links: Home, About, Services, Projects, Contact. Include a "Get a Free Estimate" CTA button in orange.
+Hero Section:
+Full-width hero with a bold headline like "Building Excellence From the Ground Up" and a subheadline like "New York's trusted partner for residential, commercial, and luxury construction." Two CTA buttons: "View Our Work" (orange filled) and "Request a Quote" (orange outlined). Use a construction-themed background image with a dark overlay to keep text readable.
+About Section:
+Brief company intro emphasizing quality craftsmanship, licensed and insured status, SST compliance, and experience with both residential and high-end commercial/luxury retail projects. Mention that they serve as a single point of contact (turnkey solutions). Use orange for any accent lines or section dividers.
+Services Section:
+Display the following service categories in a clean card or accordion layout with orange accent borders or icons. Each category should have a title, short description, and a list of sub-services:
+
+Pre-Construction & Planning — Project planning & feasibility analysis, Budgeting & cost estimation, Permit acquisition & code compliance, Scheduling & timeline development, Architectural & engineering coordination
+Project Management — Full project oversight from start to finish, Trade coordination & subcontractor management, Material procurement & logistics, Quality control & inspections, On-site supervision & safety enforcement (SST compliant)
+Residential Construction — Full home renovations & remodels, Kitchen & bathroom renovations, Basement finishing & conversions, Interior & exterior upgrades, Custom home builds
+Commercial Construction — Office build-outs & tenant improvements, Retail store construction (luxury + standard), Restaurant & hospitality construction, Corporate interior renovations, Ground-up commercial projects
+Structural & Core Work — Framing & structural modifications, Demolition & site preparation, Concrete & masonry work, Roofing & waterproofing, Foundation work
+MEP Coordination (Mechanical, Electrical, Plumbing) — Electrical installations & upgrades, Plumbing systems & fixture installation, HVAC installation & ventilation systems, Licensed trade coordination & compliance
+Interior Finishes — Drywall, taping & painting, Flooring (hardwood, tile, vinyl, etc.), Custom millwork & carpentry, Trim, doors & cabinetry installation, High-end finish work (luxury standards)
+Exterior Work — Facade improvements & repairs, Stucco, siding & brickwork, Decks, patios & outdoor builds, Waterproofing & drainage systems
+Specialty Services — Luxury retail & flagship store builds (LV, Dior level work), High-end residential finishes, Fast-track / deadline-driven projects, Value engineering (cost-saving strategies), Turnkey solutions
+Post-Construction — Final inspections & punch list completion, Certificate of occupancy assistance, Maintenance & repair services, Warranty work
+
+Projects/Portfolio Section:
+A grid gallery section with placeholder images and project type labels (residential, commercial, luxury retail). Orange hover overlays on each card. Easy to update later with real photos.
+Why Choose Us Section:
+Highlight 4 to 6 key differentiators in an icon-based grid with orange icons: Licensed & Insured, SST Compliant, Turnkey Solutions, Luxury-Level Quality, On-Time Delivery, Transparent Pricing.
+Contact Section:
+Contact form with fields for Name, Email, Phone, Project Type (dropdown), and Message. Orange "Request a Free Estimate" submit button. Display company phone number, email, and service area (New York City & surrounding areas). Form input fields should have orange focus/border highlights.
+Footer:
+Black background, company name, copyright, links to services and contact, placeholder social media icons in orange or white.
+Tech preferences: Use React or Next.js with Tailwind CSS. Keep everything clean, modular, and easy to edit. Use placeholder images from Unsplash or similar. Make sure the site is fast, accessible, and mobile-first. Orange should be the only accent color throughout, used consistently for all interactive elements, highlights, and branding touches.

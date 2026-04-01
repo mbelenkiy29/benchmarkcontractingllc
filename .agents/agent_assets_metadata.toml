@@ -1,0 +1,44 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "FSof_dP84jsbns8xKeSnf"
+uri = "file://artifacts/benchmark-contracting/public/images/hero.png"
+type = "image"
+title = "Hero dark luxury construction site"
+
+[[generated]]
+id = "pAVt6yD_jn1DuUYKsntEj"
+uri = "file://artifacts/benchmark-contracting/public/images/project-retail.png"
+type = "image"
+title = "Luxury retail interior build"
+
+[[generated]]
+id = "UuJyGOt0-Wq7WBOM_HHiL"
+uri = "file://artifacts/benchmark-contracting/public/images/project-apt.png"
+type = "image"
+title = "Luxury NYC apartment interior"
+
+[[generated]]
+id = "VESi-07bSE0qgR7jPMgnc"
+uri = "file://artifacts/benchmark-contracting/public/images/project-office.png"
+type = "image"
+title = "Commercial office build-out"
+
+[[generated]]
+id = "A1QBzsZKedUvlO2M3atD6"
+uri = "file://artifacts/benchmark-contracting/public/images/project-residential-ext.png"
+type = "image"
+title = "Luxury residential exterior"
+
+[[generated]]
+id = "GWslh2UXcWp3WzEW3gAmq"
+uri = "file://artifacts/benchmark-contracting/public/images/project-restaurant.png"
+type = "image"
+title = "High-end restaurant interior"
+
+[[generated]]
+id = "5iApAJJgIGM7vANaa3F5T"
+uri = "file://artifacts/benchmark-contracting/public/images/project-groundup.png"
+type = "image"
+title = "Commercial ground-up site"
