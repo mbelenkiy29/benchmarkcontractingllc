@@ -32,21 +32,34 @@ export default function ContactSection() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
       toast({ title: "Please fill in required fields.", variant: "destructive" });
       return;
     }
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Failed to send");
       toast({
         title: "Request submitted!",
         description: "We'll be in touch within one business day.",
       });
       setForm({ name: "", email: "", phone: "", projectType: "", message: "" });
-    }, 1200);
+    } catch {
+      toast({
+        title: "Something went wrong.",
+        description: "Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClass =
