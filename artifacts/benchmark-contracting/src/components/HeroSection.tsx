@@ -10,7 +10,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30 z-10" />
         <img
-          src="/images/hero.png"
+          src="/images/hero.jpg"
           alt="Luxury construction site at twilight"
           className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite_alternate]"
         />

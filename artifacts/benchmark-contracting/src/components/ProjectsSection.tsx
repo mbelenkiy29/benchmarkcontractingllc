@@ -23,7 +23,7 @@ const categoryColors: Record<string, string> = {
 
 const projects = [
   {
-    image: "/images/project-louis-vuitton.png",
+    image: "/images/project-louis-vuitton.jpg",
     title: "Louis Vuitton NYC",
     category: "Luxury Retail",
     description: "Contributed to the construction of the iconic new Louis Vuitton flagship on Fifth Avenue — a landmark in luxury retail architecture.",
@@ -143,6 +143,7 @@ export default function ProjectsSection() {
                 <img
                   src={featured.image}
                   alt={featured.title}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500" />
@@ -192,6 +193,7 @@ export default function ProjectsSection() {
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-all duration-500" />

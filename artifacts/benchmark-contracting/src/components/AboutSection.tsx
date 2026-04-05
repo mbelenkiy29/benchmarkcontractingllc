@@ -64,9 +64,10 @@ export default function AboutSection() {
           >
             <div className="aspect-square md:aspect-[4/5] rounded-sm overflow-hidden relative border border-white/10 bg-white/5">
               <div className="absolute inset-0 bg-primary/10 z-10" />
-              <img 
-                src="/images/project-retail.png" 
-                alt="Craftsmanship and precision" 
+              <img
+                src="/images/project-retail.jpg"
+                alt="Craftsmanship and precision"
+                loading="lazy"
                 className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
               />
               
