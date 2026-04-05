@@ -128,7 +128,7 @@ export default function ContactSection() {
                   <div>
                     <div className="text-xs text-white/40 uppercase tracking-wider mb-1 font-semibold">Service Area</div>
                     <p className="text-white font-medium">New York City & Surrounding Areas</p>
-                    <p className="text-white/50 text-sm mt-1">Manhattan · Brooklyn · Queens · The Bronx · Westchester</p>
+                    <p className="text-white/50 text-sm mt-1">Manhattan · Brooklyn · Queens · The Bronx · Staten Island · Westchester</p>
                   </div>
                 </div>
               </div>
