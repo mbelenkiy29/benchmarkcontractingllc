@@ -32,7 +32,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const response = await fetch("https://app.usesend.com/api/v1/emails", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
       body: JSON.stringify({
         to: "info@benchmarkcontractingllc.com",
         from: `Benchmark Website <noreply@benchmarkcontractingllc.com>`,
