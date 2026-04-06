@@ -12,6 +12,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const apiKey = process.env.USESEND_API_KEY;
+  const fromEmail = process.env.USESEND_FROM_EMAIL || "noreply@benchmarkcontractingllc.com";
   if (!apiKey) {
     console.error("USESEND_API_KEY is not set");
     return res.status(500).json({ error: "Email service not configured" });
@@ -38,7 +39,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
       body: JSON.stringify({
         to: ["info@benchmarkcontractingllc.com"],
-        from: "noreply@benchmarkcontractingllc.com",
+        from: fromEmail,
         replyTo: [email],
         subject: `New Inquiry from ${name}${projectType ? ` — ${projectType}` : ""}`,
         html: htmlBody,
