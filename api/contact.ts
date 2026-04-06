@@ -37,9 +37,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        to: "info@benchmarkcontractingllc.com",
-        from: `Benchmark Website <noreply@benchmarkcontractingllc.com>`,
-        replyTo: email,
+        to: ["info@benchmarkcontractingllc.com"],
+        from: "noreply@benchmarkcontractingllc.com",
+        replyTo: [email],
         subject: `New Inquiry from ${name}${projectType ? ` — ${projectType}` : ""}`,
         html: htmlBody,
         text: textBody,
@@ -49,7 +49,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (!response.ok) {
       const errorData = await response.text();
       console.error("UseSend error:", response.status, errorData);
-      return res.status(502).json({ error: "Failed to send email" });
+      return res.status(502).json({ error: "Failed to send email", detail: errorData });
     }
 
     return res.status(200).json({ success: true });
