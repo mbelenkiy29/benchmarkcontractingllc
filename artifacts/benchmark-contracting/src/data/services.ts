@@ -26,7 +26,7 @@ export const servicesData: ServiceData[] = [
       "Open-concept layout conversions",
     ],
     highlights: [
-      { label: "Timeline", value: "3–8 Weeks" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
@@ -49,10 +49,11 @@ export const servicesData: ServiceData[] = [
       "Exhaust and lighting systems",
     ],
     highlights: [
-      { label: "Timeline", value: "2–5 Weeks" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
+    heroImage: "/images/project-apt.png",
   },
   {
     slug: "flooring",
@@ -71,7 +72,7 @@ export const servicesData: ServiceData[] = [
       "Stair tread and riser installation",
     ],
     highlights: [
-      { label: "Materials", value: "All Types" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
@@ -93,10 +94,11 @@ export const servicesData: ServiceData[] = [
       "Commercial and residential applications",
     ],
     highlights: [
-      { label: "Install Time", value: "1–3 Days" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
+    heroImage: "/images/project-retail.png",
   },
   {
     slug: "acoustical-systems",
@@ -115,7 +117,7 @@ export const servicesData: ServiceData[] = [
       "Custom fabric-wrapped panels",
     ],
     highlights: [
-      { label: "Applications", value: "Commercial & Residential" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
@@ -137,7 +139,7 @@ export const servicesData: ServiceData[] = [
       "Crack repair and patching",
     ],
     highlights: [
-      { label: "Finish Types", value: "Interior & Exterior" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
@@ -159,11 +161,11 @@ export const servicesData: ServiceData[] = [
       "Luxury finish work and millwork",
     ],
     highlights: [
-      { label: "Project Types", value: "Renovation & New Build" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "NYC & Westchester" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-kitchen-residential.jpeg",
+    heroImage: "/images/project-residential-ext.png",
   },
   {
     slug: "commercial-construction",
@@ -182,7 +184,7 @@ export const servicesData: ServiceData[] = [
       "Fast-track and deadline-driven delivery",
     ],
     highlights: [
-      { label: "Notable Work", value: "Louis Vuitton NYC" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
@@ -205,7 +207,7 @@ export const servicesData: ServiceData[] = [
       "Decks, patios and outdoor builds",
     ],
     highlights: [
-      { label: "Compliance", value: "NYC DOB & SST" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
@@ -228,17 +230,18 @@ export const servicesData: ServiceData[] = [
       "NYC DOB inspection coordination",
     ],
     highlights: [
-      { label: "Licensed Trades", value: "All Systems" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
+    heroImage: "/images/project-restaurant-kitchen.jpeg",
   },
   {
     slug: "interior-finishes",
     title: "Interior Finishes",
     tagline: "Where Craftsmanship Meets Luxury.",
     description:
-      "The final stage of any build is where Benchmark truly shines. Our finish crews deliver world-class millwork, painting, and detail work that sets luxury projects apart from the rest — the kind of quality that luxury brands and high-end developers demand.",
+      "The final stage of any build is where Benchmark truly shines. Our finish crews deliver world-class millwork, painting, and detail work that sets luxury projects apart — the kind of quality that luxury brands and high-end developers demand.",
     features: [
       "Custom millwork and cabinetry",
       "Trim, baseboard and crown molding",
@@ -250,18 +253,18 @@ export const servicesData: ServiceData[] = [
       "Luxury-standard punch list completion",
     ],
     highlights: [
-      { label: "Standard", value: "Luxury Grade" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-restaurant-kitchen.jpeg",
+    heroImage: "/images/project-restaurant.png",
   },
   {
     slug: "specialty-services",
     title: "Specialty Services",
     tagline: "When the Project Demands More.",
     description:
-      "Some projects don't fit a standard mold — and that's where Benchmark excels. We specialize in luxury flagship builds, value engineering, fast-track delivery, and turnkey solutions for clients who can't afford to settle for anything less than perfect.",
+      "Some projects don't fit a standard mold — and that's where Benchmark excels. We specialize in luxury flagship builds, value engineering, fast-track delivery, and turnkey solutions for clients who can't afford anything less than perfect.",
     features: [
       "Luxury retail flagship builds (LV, Dior-level execution)",
       "Fast-track and deadline-critical delivery",
@@ -273,7 +276,7 @@ export const servicesData: ServiceData[] = [
       "Owner's representative services",
     ],
     highlights: [
-      { label: "Notable Work", value: "Louis Vuitton NYC" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
@@ -296,10 +299,11 @@ export const servicesData: ServiceData[] = [
       "LED lighting retrofits",
     ],
     highlights: [
-      { label: "Compliance", value: "Local Law 97" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
+    heroImage: "/images/project-tech-campus.jpeg",
   },
   {
     slug: "compliance-safety",
@@ -318,7 +322,7 @@ export const servicesData: ServiceData[] = [
       "Third-party inspection coordination",
     ],
     highlights: [
-      { label: "Certification", value: "SST & OSHA" },
+      { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
@@ -331,7 +335,6 @@ export const servicesBySlug = Object.fromEntries(
 );
 
 export const navServiceItems = servicesData.map((s) => ({
-  label: s.title.replace(" Renovations", "").replace("Mechanical, Electrical & Plumbing", "MEP Systems"),
-  displayLabel: s.title,
+  label: s.title,
   href: `/services/${s.slug}`,
 }));
