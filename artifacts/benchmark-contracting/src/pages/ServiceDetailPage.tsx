@@ -38,10 +38,10 @@ export default function ServiceDetailPage() {
               <img
                 src={service.heroImage}
                 alt={service.title}
-                className="w-full h-full object-cover opacity-20"
+                className="w-full h-full object-cover opacity-60"
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/90 to-gray-900/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/30" />
           </>
         )}
         <div className="container mx-auto px-4 md:px-6 relative">
