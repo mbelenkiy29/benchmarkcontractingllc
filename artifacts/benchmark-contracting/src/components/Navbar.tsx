@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import logoSrc from "@assets/Benchmark_1775063903268.png";
 
 const serviceItems = [
+  "Kitchens",
+  "Bathrooms",
+  "Flooring",
   "Stretch Ceilings",
   "Acoustical Systems",
   "Plaster and Stucco",
