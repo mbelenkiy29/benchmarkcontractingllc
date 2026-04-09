@@ -31,57 +31,58 @@ export default function ServiceDetailPage() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gray-900 overflow-hidden">
-        {service.heroImage && (
-          <>
-            <div className="absolute inset-0">
+      <section className="bg-gray-900 overflow-hidden min-h-[480px] flex">
+        <div className={`flex w-full ${service.heroImage ? "flex-col md:flex-row" : ""}`}>
+          {/* Left — text */}
+          <div className={`flex flex-col justify-center pt-32 pb-16 px-8 md:px-14 lg:px-20 ${service.heroImage ? "md:w-1/2 lg:w-[55%]" : "w-full container mx-auto"}`}>
+            <Link href="/services">
+              <span className="inline-flex items-center gap-2 text-white/50 hover:text-primary transition-colors text-sm mb-6 cursor-pointer">
+                <ArrowLeft className="w-4 h-4" /> All Services
+              </span>
+            </Link>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="inline-block px-4 py-1.5 mb-4 border border-primary/30 bg-primary/10 rounded-sm">
+                <span className="text-primary font-semibold tracking-wider text-sm uppercase">
+                  Benchmark Contracting
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+                {service.title}
+              </h1>
+              <p className="text-xl text-primary font-semibold mb-4">{service.tagline}</p>
+              <p className="text-base md:text-lg text-white/70 leading-relaxed mb-8">{service.description}</p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact">
+                  <Button className="bg-primary hover:bg-primary/90 text-white font-bold h-12 px-8 rounded-sm">
+                    Get a Free Estimate
+                  </Button>
+                </Link>
+                <a href="tel:3473235535">
+                  <Button
+                    variant="outline"
+                    className="border-white/30 text-white hover:bg-white/10 font-semibold h-12 px-8 rounded-sm bg-transparent flex items-center gap-2"
+                  >
+                    <Phone className="w-4 h-4" /> (347) 323-5535
+                  </Button>
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right — full image panel */}
+          {service.heroImage && (
+            <div className="md:w-1/2 lg:w-[45%] min-h-[320px] md:min-h-0 relative overflow-hidden">
               <img
                 src={service.heroImage}
                 alt={service.title}
-                className="w-full h-full object-cover opacity-60"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/30" />
-          </>
-        )}
-        <div className="container mx-auto px-4 md:px-6 relative">
-          <Link href="/services">
-            <span className="inline-flex items-center gap-2 text-white/50 hover:text-primary transition-colors text-sm mb-6 cursor-pointer">
-              <ArrowLeft className="w-4 h-4" /> All Services
-            </span>
-          </Link>
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-2xl"
-          >
-            <div className="inline-block px-4 py-1.5 mb-4 border border-primary/30 bg-primary/10 rounded-sm">
-              <span className="text-primary font-semibold tracking-wider text-sm uppercase">
-                Benchmark Contracting
-              </span>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-              {service.title}
-            </h1>
-            <p className="text-xl text-primary font-semibold mb-4">{service.tagline}</p>
-            <p className="text-lg text-white/70 leading-relaxed mb-8">{service.description}</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact">
-                <Button className="bg-primary hover:bg-primary/90 text-white font-bold h-12 px-8 rounded-sm">
-                  Get a Free Estimate
-                </Button>
-              </Link>
-              <a href="tel:3473235535">
-                <Button
-                  variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 font-semibold h-12 px-8 rounded-sm bg-transparent flex items-center gap-2"
-                >
-                  <Phone className="w-4 h-4" /> (347) 323-5535
-                </Button>
-              </a>
-            </div>
-          </motion.div>
+          )}
         </div>
       </section>
 
