@@ -88,7 +88,7 @@ export default function ProjectsSection() {
   const showFeatured = activeCategory === ALL || activeCategory === "Luxury Retail";
 
   return (
-    <section id="projects" className="py-24 md:py-32 bg-black relative">
+    <section id="projects" className="py-24 md:py-32 bg-white relative">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <motion.div
@@ -103,10 +103,10 @@ export default function ProjectsSection() {
             <span className="text-primary font-semibold uppercase tracking-wider text-sm">Our Portfolio</span>
             <div className="h-px w-12 bg-primary" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Built to Impress. Built to Last.
           </h2>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
             A selection of our work across residential, commercial, hospitality, and luxury retail sectors in New York.
           </p>
         </motion.div>
@@ -120,7 +120,7 @@ export default function ProjectsSection() {
               className={`px-4 py-2 text-sm font-semibold uppercase tracking-wider rounded-sm border transition-all duration-200 ${
                 activeCategory === cat
                   ? "bg-primary border-primary text-white"
-                  : "bg-transparent border-white/20 text-white/60 hover:border-primary/60 hover:text-white"
+                  : "bg-white border-gray-300 text-gray-600 hover:border-primary/60 hover:text-primary"
               }`}
             >
               {cat}
@@ -137,7 +137,7 @@ export default function ProjectsSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4 }}
-              className="group relative overflow-hidden rounded-sm bg-zinc-900 border border-primary/50 hover:border-primary transition-all duration-300 cursor-pointer mb-6"
+              className="group relative overflow-hidden rounded-sm bg-gray-100 border border-primary/40 hover:border-primary hover:shadow-xl transition-all duration-300 cursor-pointer mb-6"
             >
               <div className="aspect-[16/7] overflow-hidden relative">
                 <img
@@ -146,30 +146,35 @@ export default function ProjectsSection() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                 <div className="absolute top-4 left-4 flex items-center gap-2">
                   <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm ${categoryColors[featured.category]}`}>
                     {featured.category}
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm bg-white/10 text-white/80 border border-white/20">
+                  <span className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm bg-white/20 text-white border border-white/30">
                     Featured Project
                   </span>
                 </div>
                 <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-2 group-hover:translate-y-0">
-                  <ArrowUpRight className="w-5 h-5 text-primary" />
+                  <ArrowUpRight className="w-5 h-5 text-white" />
+                </div>
+                {/* Title inside image at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                    {featured.title}
+                  </h3>
+                  <p className="text-base text-white/80 leading-relaxed max-w-2xl hidden md:block">
+                    {featured.description}
+                  </p>
+                  <div className="flex items-center gap-2 text-xs text-white/60 uppercase tracking-wider mt-2">
+                    <span className="w-4 h-px bg-primary" />
+                    {featured.location}
+                  </div>
                 </div>
               </div>
-              <div className="p-6 md:p-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                  {featured.title}
-                </h3>
-                <p className="text-base text-white/60 mb-3 leading-relaxed max-w-2xl">
-                  {featured.description}
-                </p>
-                <div className="flex items-center gap-2 text-xs text-white/40 uppercase tracking-wider">
-                  <span className="w-4 h-px bg-primary" />
-                  {featured.location}
-                </div>
+              {/* Mobile description */}
+              <div className="p-6 md:hidden">
+                <p className="text-sm text-gray-600 leading-relaxed">{featured.description}</p>
               </div>
             </motion.div>
           )}
@@ -186,7 +191,7 @@ export default function ProjectsSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.35, delay: i * 0.06 }}
-                className="group relative overflow-hidden rounded-sm bg-zinc-900 border border-white/10 hover:border-primary/40 transition-all duration-300 cursor-pointer"
+                className="group relative overflow-hidden rounded-sm bg-white border border-gray-200 hover:border-primary/40 hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img
@@ -194,25 +199,25 @@ export default function ProjectsSection() {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-all duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm ${categoryColors[project.category] ?? "bg-white/10 text-white"}`}>
+                    <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm ${categoryColors[project.category] ?? "bg-white/20 text-white"}`}>
                       {project.category}
                     </span>
                   </div>
                   <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-2 group-hover:translate-y-0">
-                    <ArrowUpRight className="w-5 h-5 text-primary" />
+                    <ArrowUpRight className="w-5 h-5 text-white" />
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-white/60 mb-3 leading-relaxed">
+                  <p className="text-sm text-gray-500 mb-3 leading-relaxed">
                     {project.description}
                   </p>
-                  <div className="flex items-center gap-2 text-xs text-white/40 uppercase tracking-wider">
+                  <div className="flex items-center gap-2 text-xs text-gray-400 uppercase tracking-wider">
                     <span className="w-4 h-px bg-primary" />
                     {project.location}
                   </div>
@@ -223,7 +228,7 @@ export default function ProjectsSection() {
         </div>
 
         {filtered.length === 0 && (
-          <div className="text-center py-20 text-white/40 text-lg">
+          <div className="text-center py-20 text-gray-400 text-lg">
             No projects in this category yet.
           </div>
         )}
