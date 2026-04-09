@@ -5,7 +5,7 @@ export interface ServiceData {
   description: string;
   features: string[];
   highlights: { label: string; value: string }[];
-  heroImage?: string;
+  heroImages?: string[];
 }
 
 export const servicesData: ServiceData[] = [
@@ -30,7 +30,7 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-kitchen-residential.jpeg",
+    heroImages: ["/images/project-kitchen-residential.jpeg"],
   },
   {
     slug: "bathrooms",
@@ -53,7 +53,7 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-apt.png",
+    heroImages: ["/images/project-apt.png"],
   },
   {
     slug: "flooring",
@@ -98,7 +98,7 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-retail.png",
+    heroImages: ["/images/project-retail.png"],
   },
   {
     slug: "acoustical-systems",
@@ -165,7 +165,7 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "NYC & Westchester" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-residential-ext.png",
+    heroImages: ["/images/project-residential-ext.png"],
   },
   {
     slug: "commercial-construction",
@@ -188,7 +188,7 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-corporate-hq.jpeg",
+    heroImages: ["/images/project-corporate-hq.jpeg"],
   },
   {
     slug: "structural-exterior",
@@ -211,7 +211,7 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-ground-up.jpeg",
+    heroImages: ["/images/project-ground-up.jpeg"],
   },
   {
     slug: "mechanical-electrical-plumbing",
@@ -234,7 +234,7 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-restaurant-kitchen.jpeg",
+    heroImages: ["/images/project-restaurant-kitchen.jpeg"],
   },
   {
     slug: "interior-finishes",
@@ -257,7 +257,7 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-restaurant.png",
+    heroImages: ["/images/project-restaurant.png"],
   },
   {
     slug: "specialty-services",
@@ -280,7 +280,7 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-louis-vuitton.png",
+    heroImages: ["/images/project-louis-vuitton.png"],
   },
   {
     slug: "building-performance",
@@ -303,7 +303,7 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-tech-campus.jpeg",
+    heroImages: ["/images/project-tech-campus.jpeg"],
   },
   {
     slug: "compliance-safety",
@@ -326,7 +326,7 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImage: "/images/project-landmark.jpeg",
+    heroImages: ["/images/project-landmark.jpeg"],
   },
 ];
 

@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { useParams } from "wouter";
 import { Link } from "wouter";
-import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight, Phone, ArrowLeft } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle2, ArrowRight, Phone, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import { servicesBySlug, servicesData } from "@/data/services";
@@ -9,6 +10,8 @@ import { servicesBySlug, servicesData } from "@/data/services";
 export default function ServiceDetailPage() {
   const params = useParams<{ slug: string }>();
   const service = servicesBySlug[params.slug ?? ""];
+  const [imgIndex, setImgIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
 
   if (!service) {
     return (
@@ -25,16 +28,31 @@ export default function ServiceDetailPage() {
     );
   }
 
-  // Other services for the sidebar (exclude current)
+  const images = service.heroImages ?? [];
+  const hasImages = images.length > 0;
+
+  const prev = () => {
+    setDirection(-1);
+    setImgIndex((i) => (i - 1 + images.length) % images.length);
+  };
+  const next = () => {
+    setDirection(1);
+    setImgIndex((i) => (i + 1) % images.length);
+  };
+
   const otherServices = servicesData.filter((s) => s.slug !== service.slug);
 
   return (
     <Layout>
       {/* Hero */}
       <section className="bg-gray-900 overflow-hidden min-h-[480px] flex">
-        <div className={`flex w-full ${service.heroImage ? "flex-col md:flex-row" : ""}`}>
+        <div className={`flex w-full ${hasImages ? "flex-col md:flex-row" : ""}`}>
           {/* Left — text */}
-          <div className={`flex flex-col justify-center pt-32 pb-16 px-8 md:px-14 lg:px-20 ${service.heroImage ? "md:w-1/2 lg:w-[55%]" : "w-full container mx-auto"}`}>
+          <div
+            className={`flex flex-col justify-center pt-32 pb-16 px-8 md:px-14 lg:px-20 ${
+              hasImages ? "md:w-1/2 lg:w-[55%]" : "w-full container mx-auto"
+            }`}
+          >
             <Link href="/services">
               <span className="inline-flex items-center gap-2 text-white/50 hover:text-primary transition-colors text-sm mb-6 cursor-pointer">
                 <ArrowLeft className="w-4 h-4" /> All Services
@@ -54,7 +72,9 @@ export default function ServiceDetailPage() {
                 {service.title}
               </h1>
               <p className="text-xl text-primary font-semibold mb-4">{service.tagline}</p>
-              <p className="text-base md:text-lg text-white/70 leading-relaxed mb-8">{service.description}</p>
+              <p className="text-base md:text-lg text-white/70 leading-relaxed mb-8">
+                {service.description}
+              </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact">
                   <Button className="bg-primary hover:bg-primary/90 text-white font-bold h-12 px-8 rounded-sm">
@@ -73,14 +93,56 @@ export default function ServiceDetailPage() {
             </motion.div>
           </div>
 
-          {/* Right — full image panel */}
-          {service.heroImage && (
-            <div className="md:w-1/2 lg:w-[45%] min-h-[320px] md:min-h-0 relative overflow-hidden">
-              <img
-                src={service.heroImage}
-                alt={service.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+          {/* Right — slideshow panel */}
+          {hasImages && (
+            <div className="md:w-1/2 lg:w-[45%] min-h-[320px] md:min-h-0 relative overflow-hidden group">
+              {/* Images */}
+              <AnimatePresence initial={false} custom={direction} mode="popLayout">
+                <motion.img
+                  key={images[imgIndex]}
+                  src={images[imgIndex]}
+                  alt={`${service.title} photo ${imgIndex + 1}`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  custom={direction}
+                  initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: direction > 0 ? "-100%" : "100%", opacity: 0 }}
+                  transition={{ duration: 0.45, ease: "easeInOut" }}
+                />
+              </AnimatePresence>
+
+              {/* Prev arrow — left border */}
+              <button
+                onClick={prev}
+                className="absolute left-0 top-0 h-full w-10 flex items-center justify-center bg-black/20 hover:bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-all duration-200 z-10"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+
+              {/* Next arrow — right border */}
+              <button
+                onClick={next}
+                className="absolute right-0 top-0 h-full w-10 flex items-center justify-center bg-black/20 hover:bg-black/50 text-white opacity-0 group-hover:opacity-100 transition-all duration-200 z-10"
+                aria-label="Next image"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+
+              {/* Dot indicators */}
+              {images.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                  {images.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => { setDirection(i > imgIndex ? 1 : -1); setImgIndex(i); }}
+                      className={`w-1.5 h-1.5 rounded-full transition-all ${
+                        i === imgIndex ? "bg-white scale-125" : "bg-white/50"
+                      }`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -114,7 +176,9 @@ export default function ServiceDetailPage() {
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-px w-10 bg-primary" />
-                  <span className="text-primary font-semibold uppercase tracking-wider text-sm">What's Included</span>
+                  <span className="text-primary font-semibold uppercase tracking-wider text-sm">
+                    What's Included
+                  </span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
                   Everything You Need, Nothing You Don't.
@@ -146,7 +210,10 @@ export default function ServiceDetailPage() {
               >
                 <h3 className="text-2xl font-bold text-white mb-3">Why Benchmark?</h3>
                 <p className="text-white/70 leading-relaxed mb-6">
-                  Benchmark Contracting Group is a fully licensed and insured New York general contractor with 15+ years delivering high-end results. Every project has one dedicated point of contact, a transparent budget, and SST-compliant crews — from the first shovel to the final punch list.
+                  Benchmark Contracting Group is a fully licensed and insured New York general contractor
+                  with 40+ years delivering high-end results. Every project has one dedicated point of
+                  contact, a transparent budget, and SST-compliant crews — from the first shovel to the
+                  final punch list.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/contact">
@@ -155,7 +222,10 @@ export default function ServiceDetailPage() {
                     </Button>
                   </Link>
                   <Link href="/projects">
-                    <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-sm px-6 bg-transparent">
+                    <Button
+                      variant="outline"
+                      className="border-white/20 text-white hover:bg-white/10 rounded-sm px-6 bg-transparent"
+                    >
                       View Our Work
                     </Button>
                   </Link>
@@ -166,7 +236,7 @@ export default function ServiceDetailPage() {
             {/* Sidebar — Other Services */}
             <div className="lg:col-span-1">
               <div className="sticky top-28">
-                <h3 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wider text-sm">
+                <h3 className="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wider">
                   Other Services
                 </h3>
                 <div className="flex flex-col gap-1">
@@ -184,14 +254,18 @@ export default function ServiceDetailPage() {
                 <div className="mt-6 p-6 bg-primary/5 border border-primary/20 rounded-sm">
                   <div className="text-2xl font-bold text-primary mb-1">Free Estimate</div>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    Ready to get started? Contact us for a no-obligation consultation and detailed project estimate.
+                    Ready to get started? Contact us for a no-obligation consultation and detailed project
+                    estimate.
                   </p>
                   <Link href="/contact">
                     <Button className="w-full bg-primary hover:bg-primary/90 text-white font-bold rounded-sm">
                       Get in Touch
                     </Button>
                   </Link>
-                  <a href="tel:3473235535" className="block text-center mt-3 text-sm text-gray-500 hover:text-primary transition-colors">
+                  <a
+                    href="tel:3473235535"
+                    className="block text-center mt-3 text-sm text-gray-500 hover:text-primary transition-colors"
+                  >
                     (347) 323-5535
                   </a>
                 </div>
