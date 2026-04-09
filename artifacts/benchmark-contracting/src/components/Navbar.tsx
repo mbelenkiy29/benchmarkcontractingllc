@@ -17,6 +17,7 @@ const serviceItems = [
   "Mechanical, Electrical & Plumbing",
   "Interior Finishes",
   "Specialty Services",
+  "Building Performance",
   "Compliance & Safety",
 ];
 
