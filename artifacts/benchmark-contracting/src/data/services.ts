@@ -188,7 +188,12 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImages: ["/images/project-corporate-hq.jpeg"],
+    heroImages: [
+      "/images/project-corporate-hq.jpeg",
+      "https://sciame.com/wp-content/uploads/2025/04/LV-2411-01-scaled.jpg",
+      "https://sciame.com/wp-content/uploads/2023/09/01-Perelman-Performing-Arts-Center-designed-by-REX.-Image-Iwan-Baan.-.jpg",
+      "https://sciame.com/wp-content/uploads/2025/06/esto_2024DS20-015-scaled.jpg",
+    ],
   },
   {
     slug: "structural-exterior",
@@ -234,7 +239,10 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImages: ["/images/project-restaurant-kitchen.jpeg"],
+    heroImages: [
+      "/images/project-restaurant-kitchen.jpeg",
+      "https://sciame.com/wp-content/uploads/2023/09/12-Perelman-Performing-Arts-Center-mechanical-room.-Image-Iwan-Baan.-.jpg",
+    ],
   },
   {
     slug: "interior-finishes",
@@ -257,7 +265,13 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImages: ["/images/project-restaurant.png"],
+    heroImages: [
+      "/images/project-restaurant.png",
+      "https://sciame.com/wp-content/uploads/2025/04/LV-2411-38-scaled.jpg",
+      "https://sciame.com/wp-content/uploads/2025/04/LV-2411-52-scaled.jpg",
+      "https://sciame.com/wp-content/uploads/2023/09/18-Perelman-Performing-Arts-Center-Vartan-and-Clare-Gregorian-Stage-on-the-Lobby-Level.-Interior-design-by-Rockwell-Group.-Image-Iwan-Baan.-.jpg",
+      "https://sciame.com/wp-content/uploads/2025/06/esto_2024DS20-049-scaled.jpg",
+    ],
   },
   {
     slug: "specialty-services",
@@ -280,7 +294,13 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImages: ["/images/project-louis-vuitton.png"],
+    heroImages: [
+      "/images/project-louis-vuitton.png",
+      "https://sciame.com/wp-content/uploads/2025/04/LV-2411-41-scaled.jpg",
+      "https://sciame.com/wp-content/uploads/2025/04/LV-2411-50-scaled.jpg",
+      "https://sciame.com/wp-content/uploads/2023/09/11-Perelman-Performing-Arts-Center-John-E.-Zuccotti-Theater-during-load-in-for-first-performances.-Image-Iwan-Baan.-.jpg",
+      "https://sciame.com/wp-content/uploads/2025/06/esto_2024DS20-055-scaled.jpg",
+    ],
   },
   {
     slug: "building-performance",
