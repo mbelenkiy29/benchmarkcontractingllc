@@ -53,7 +53,7 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImages: ["/images/project-apt.png"],
+    heroImages: [],
   },
   {
     slug: "flooring",
@@ -272,6 +272,7 @@ export const servicesData: ServiceData[] = [
     ],
     heroImages: [
       "/images/project-restaurant.png",
+      "/images/project-apt.png",
       "https://sciame.com/wp-content/uploads/2023/09/18-Perelman-Performing-Arts-Center-Vartan-and-Clare-Gregorian-Stage-on-the-Lobby-Level.-Interior-design-by-Rockwell-Group.-Image-Iwan-Baan.-.jpg",
       "https://sciame.com/wp-content/uploads/2025/06/esto_2024DS20-049-scaled.jpg",
     ],
