@@ -78,6 +78,28 @@ export const servicesData: ServiceData[] = [
     ],
   },
   {
+    slug: "epoxy-resin",
+    title: "Epoxy Resin",
+    tagline: "Surfaces That Impress. Floors That Last.",
+    description:
+      "Benchmark Contracting installs premium epoxy resin systems for commercial and residential spaces across New York. From high-gloss showroom floors to metallic decorative finishes, our epoxy work is built to withstand heavy traffic and turn heads.",
+    features: [
+      "High-gloss epoxy floor coatings",
+      "Metallic and 3D epoxy systems",
+      "Decorative flake and quartz epoxy",
+      "Self-leveling epoxy overlays",
+      "Anti-slip and safety coatings",
+      "Garage and warehouse floor systems",
+      "Commercial kitchen and food-grade coatings",
+      "Concrete surface preparation and repair",
+    ],
+    highlights: [
+      { label: "Experience", value: "40+ Years" },
+      { label: "Service Area", value: "All NYC Boroughs" },
+      { label: "Estimate", value: "Free Consultation" },
+    ],
+  },
+  {
     slug: "stretch-ceilings",
     title: "Stretch Ceilings",
     tagline: "Ceilings That Make a Statement.",
