@@ -36,9 +36,9 @@ const differentiators = [
 
 export default function WhyChooseUsSection() {
   return (
-    <section id="why-us" className="py-24 md:py-32 bg-zinc-950 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,102,0,0.06)_0%,_transparent_60%)]" />
-      
+    <section id="why-us" className="py-24 md:py-32 bg-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,102,0,0.04)_0%,_transparent_60%)]" />
+
       <div className="container mx-auto px-4 md:px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,10 +52,10 @@ export default function WhyChooseUsSection() {
             <span className="text-primary font-semibold uppercase tracking-wider text-sm">The Benchmark Difference</span>
             <div className="h-px w-12 bg-primary" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Why the Best Choose Benchmark
           </h2>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
             Architects, developers, and luxury brands trust us to deliver when it counts.
           </p>
         </motion.div>
@@ -71,19 +71,19 @@ export default function WhyChooseUsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group p-8 border border-white/10 rounded-sm bg-black/40 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 relative overflow-hidden"
+                className="group p-8 border border-gray-200 rounded-sm bg-white hover:border-primary/40 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent transition-all duration-500" />
-                
+
                 <div className="relative">
                   <div className="w-14 h-14 rounded-sm bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                     <Icon className="w-7 h-7 text-primary" />
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-white/60 leading-relaxed">
+                  <p className="text-gray-500 leading-relaxed">
                     {item.description}
                   </p>
 
