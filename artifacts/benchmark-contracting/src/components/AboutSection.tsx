@@ -11,10 +11,10 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-black relative">
+    <section id="about" className="py-24 md:py-32 bg-white relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
+
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -25,13 +25,13 @@ export default function AboutSection() {
               <div className="h-px w-12 bg-primary" />
               <span className="text-primary font-semibold uppercase tracking-wider">About Benchmark</span>
             </div>
-            
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
               Precision. Trust. <br />
-              <span className="text-white/50">Uncompromising Craftsmanship.</span>
+              <span className="text-gray-400">Uncompromising Craftsmanship.</span>
             </h2>
-            
-            <div className="space-y-6 text-lg text-white/70 leading-relaxed mb-10">
+
+            <div className="space-y-6 text-lg text-gray-600 leading-relaxed mb-10">
               <p>
                 Benchmark Contracting Group is a high-end, licensed, and insured general contractor based in New York. We specialize in luxury retail, high-end residential, and complex commercial projects.
               </p>
@@ -39,7 +39,7 @@ export default function AboutSection() {
                 We don't just build spaces; we deliver peace of mind. Developers, architects, and luxury brands trust us because we provide turnkey solutions with a single point of contact. From pre-construction to the final punch list, our commitment to quality is unwavering.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4">
               {[
                 "Luxury Retail (Louis Vuitton, Dior level)",
@@ -49,7 +49,7 @@ export default function AboutSection() {
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
-                  <span className="text-white font-medium">{item}</span>
+                  <span className="text-gray-800 font-medium">{item}</span>
                 </div>
               ))}
             </div>
@@ -62,7 +62,7 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="aspect-square md:aspect-[4/5] rounded-sm overflow-hidden relative border border-white/10 bg-white/5">
+            <div className="aspect-square md:aspect-[4/5] rounded-sm overflow-hidden relative border border-gray-200 bg-gray-100">
               <div className="absolute inset-0 bg-primary/10 z-10" />
               <img
                 src="/images/project-retail.jpg"
@@ -70,25 +70,25 @@ export default function AboutSection() {
                 loading="lazy"
                 className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
               />
-              
+
               {/* Stats Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md border-t border-white/10 p-6 z-20">
+              <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-gray-200 p-6 z-20">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                   {stats.map((stat, i) => (
                     <div key={i}>
                       <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
-                      <div className="text-xs text-white/60 uppercase tracking-wider font-semibold">{stat.label}</div>
+                      <div className="text-xs text-gray-500 uppercase tracking-wider font-semibold">{stat.label}</div>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-            
+
             {/* Decorative Element */}
             <div className="absolute -top-6 -right-6 w-32 h-32 border-t-2 border-r-2 border-primary hidden md:block" />
             <div className="absolute -bottom-6 -left-6 w-32 h-32 border-b-2 border-l-2 border-primary hidden md:block" />
           </motion.div>
-          
+
         </div>
       </div>
     </section>

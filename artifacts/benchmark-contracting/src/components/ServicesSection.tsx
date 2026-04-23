@@ -135,8 +135,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className={`border border-white/10 bg-white/5 rounded-sm overflow-hidden transition-all duration-300 hover:border-primary/40 ${
-        open ? "border-primary/40" : ""
+      className={`border bg-white rounded-sm overflow-hidden transition-all duration-300 shadow-sm hover:shadow-md hover:border-primary/40 ${
+        open ? "border-primary/40 shadow-md" : "border-gray-200"
       }`}
     >
       <button
@@ -148,10 +148,10 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           <Icon className="w-6 h-6 text-primary" />
         </div>
         <div className="flex-1">
-          <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
+          <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">
             {service.title}
           </h3>
-          <p className="text-sm text-white/50 mt-1 leading-snug">{service.description}</p>
+          <p className="text-sm text-gray-500 mt-1 leading-snug">{service.description}</p>
         </div>
         <ChevronDown
           className={`w-5 h-5 text-primary shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
@@ -166,10 +166,10 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="px-6 pb-6 border-t border-white/10 pt-4">
+            <div className="px-6 pb-6 border-t border-gray-100 pt-4">
               <ul className="space-y-2">
                 {service.items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white/70">
+                  <li key={i} className="flex items-start gap-3 text-gray-600">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                     <span className="text-sm">{item}</span>
                   </li>
@@ -185,8 +185,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-zinc-950 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,102,0,0.04)_0%,_transparent_70%)]" />
+    <section id="services" className="py-24 md:py-32 bg-gray-50 relative">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,102,0,0.03)_0%,_transparent_70%)]" />
       <div className="container mx-auto px-4 md:px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -200,10 +200,10 @@ export default function ServicesSection() {
             <span className="text-primary font-semibold uppercase tracking-wider text-sm">What We Do</span>
             <div className="h-px w-12 bg-primary" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Full-Spectrum Construction Services
           </h2>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
             From first shovel to final inspection — we handle everything so you don't have to.
           </p>
         </motion.div>
