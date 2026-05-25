@@ -53,7 +53,12 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImages: [],
+    heroImages: [
+      "/images/bathroom-1.jpeg",
+      "/images/bathroom-2.jpeg",
+      "/images/bathroom-3.jpeg",
+      "/images/bathroom-4.jpeg",
+    ],
   },
   {
     slug: "flooring",
