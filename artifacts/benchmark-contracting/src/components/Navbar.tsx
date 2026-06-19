@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoSrc from "@assets/Benchmark_1775063903268.png";
+import logoSrc from "@assets/FullLogo_Transparent_NoBuffer_1781838371080.PNG";
 import { servicesData } from "@/data/services";
 
 const serviceMenuItems = servicesData.map((s) => ({
@@ -52,17 +52,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
-            <div
-              className="cursor-pointer overflow-hidden relative flex-shrink-0"
-              style={{ width: "260px", height: "56px" }}
-            >
-              <img
-                src={logoSrc}
-                alt="Benchmark Contracting Group"
-                className="absolute"
-                style={{ width: "260px", top: "-100px" }}
-              />
-            </div>
+            <img
+              src={logoSrc}
+              alt="Benchmark Contracting Group"
+              className="cursor-pointer flex-shrink-0 h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
