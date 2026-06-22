@@ -104,6 +104,14 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
+    heroImages: [
+      "/images/epoxy-1.jpeg",
+      "/images/epoxy-2.jpeg",
+      "/images/epoxy-3.jpeg",
+      "/images/epoxy-4.jpeg",
+      "/images/epoxy-5.jpeg",
+      "/images/epoxy-6.jpeg",
+    ],
   },
   {
     slug: "stretch-ceilings",
