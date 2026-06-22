@@ -54,10 +54,11 @@ export const servicesData: ServiceData[] = [
       { label: "Estimate", value: "Free Consultation" },
     ],
     heroImages: [
-      "/images/bathroom-1.jpeg",
-      "/images/bathroom-2.jpeg",
-      "/images/bathroom-3.jpeg",
-      "/images/bathroom-4.jpeg",
+      "/images/bathroom-new-1.jpeg",
+      "/images/bathroom-new-2.jpeg",
+      "/images/bathroom-new-3.jpeg",
+      "/images/bathroom-new-4.jpeg",
+      "/images/bathroom-new-5.jpeg",
     ],
   },
   {
