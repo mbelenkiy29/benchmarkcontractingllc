@@ -82,6 +82,13 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
+    heroImages: [
+      "/images/flooring-1.jpeg",
+      "/images/flooring-2.jpeg",
+      "/images/flooring-3.jpeg",
+      "/images/flooring-4.jpeg",
+      "/images/flooring-5.jpeg",
+    ],
   },
   {
     slug: "epoxy-resin",
