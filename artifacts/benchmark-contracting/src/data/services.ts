@@ -30,7 +30,12 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImages: ["/images/project-kitchen-residential.jpeg"],
+    heroImages: [
+      "/images/kitchen-1.jpeg",
+      "/images/kitchen-2.jpeg",
+      "/images/kitchen-3.jpeg",
+      "/images/kitchen-4.jpeg",
+    ],
   },
   {
     slug: "bathrooms",
@@ -53,7 +58,13 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImages: [],
+    heroImages: [
+      "/images/bathroom-new-1.jpeg",
+      "/images/bathroom-new-2.jpeg",
+      "/images/bathroom-new-3.jpeg",
+      "/images/bathroom-new-4.jpeg",
+      "/images/bathroom-new-5.jpeg",
+    ],
   },
   {
     slug: "flooring",
@@ -76,6 +87,13 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
+    heroImages: [
+      "/images/flooring-1.jpeg",
+      "/images/flooring-2.jpeg",
+      "/images/flooring-3.jpeg",
+      "/images/flooring-4.jpeg",
+      "/images/flooring-5.jpeg",
+    ],
   },
   {
     slug: "epoxy-resin",
@@ -97,6 +115,14 @@ export const servicesData: ServiceData[] = [
       { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
+    ],
+    heroImages: [
+      "/images/epoxy-1.jpeg",
+      "/images/epoxy-2.jpeg",
+      "/images/epoxy-3.jpeg",
+      "/images/epoxy-4.jpeg",
+      "/images/epoxy-5.jpeg",
+      "/images/epoxy-6.jpeg",
     ],
   },
   {
@@ -143,6 +169,12 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
+    heroImages: [
+      "/images/acoustic-1.jpeg",
+      "/images/acoustic-2.jpeg",
+      "/images/acoustic-3.jpeg",
+      "/images/acoustic-4.jpeg",
+    ],
   },
   {
     slug: "plaster-stucco",
@@ -164,6 +196,13 @@ export const servicesData: ServiceData[] = [
       { label: "Experience", value: "40+ Years" },
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
+    ],
+    heroImages: [
+      "/images/plaster-1.jpeg",
+      "/images/plaster-2.jpeg",
+      "/images/plaster-3.jpeg",
+      "/images/plaster-4.jpeg",
+      "/images/plaster-5.jpeg",
     ],
   },
   {
@@ -267,8 +306,9 @@ export const servicesData: ServiceData[] = [
       { label: "Estimate", value: "Free Consultation" },
     ],
     heroImages: [
-      "/images/project-restaurant-kitchen.jpeg",
-      "https://sciame.com/wp-content/uploads/2023/09/12-Perelman-Performing-Arts-Center-mechanical-room.-Image-Iwan-Baan.-.jpg",
+      "/images/mep-1.jpeg",
+      "/images/mep-2.jpeg",
+      "/images/mep-3.jpeg",
     ],
   },
   {

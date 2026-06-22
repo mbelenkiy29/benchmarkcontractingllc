@@ -1,40 +1,41 @@
-import { lazy, Suspense } from "react";
 import { Switch, Route, Router as WouterRouter } from "wouter";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
+import Home from "@/pages/Home";
+import AboutPage from "@/pages/AboutPage";
+import ServicesPage from "@/pages/ServicesPage";
+import ProjectsPage from "@/pages/ProjectsPage";
+import ContactPage from "@/pages/ContactPage";
+import ServiceDetailPage from "@/pages/ServiceDetailPage";
 
-const Home = lazy(() => import("@/pages/Home"));
-const AboutPage = lazy(() => import("@/pages/AboutPage"));
-const ServicesPage = lazy(() => import("@/pages/ServicesPage"));
-const ServiceDetailPage = lazy(() => import("@/pages/ServiceDetailPage"));
-const ProjectsPage = lazy(() => import("@/pages/ProjectsPage"));
-const ContactPage = lazy(() => import("@/pages/ContactPage"));
+const queryClient = new QueryClient();
 
 function Router() {
   return (
-    <Suspense>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/services" component={ServicesPage} />
-        <Route path="/services/:slug" component={ServiceDetailPage} />
-        <Route path="/projects" component={ProjectsPage} />
-        <Route path="/contact" component={ContactPage} />
-        <Route component={NotFound} />
-      </Switch>
-    </Suspense>
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/about" component={AboutPage} />
+      <Route path="/services" component={ServicesPage} />
+      <Route path="/services/:slug" component={ServiceDetailPage} />
+      <Route path="/projects" component={ProjectsPage} />
+      <Route path="/contact" component={ContactPage} />
+      <Route component={NotFound} />
+    </Switch>
   );
 }
 
 function App() {
   return (
-    <TooltipProvider>
-      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-        <Router />
-      </WouterRouter>
-      <Toaster />
-    </TooltipProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <Router />
+        </WouterRouter>
+        <Toaster />
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 }
 
