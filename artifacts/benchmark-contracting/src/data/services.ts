@@ -306,8 +306,9 @@ export const servicesData: ServiceData[] = [
       { label: "Estimate", value: "Free Consultation" },
     ],
     heroImages: [
-      "/images/project-restaurant-kitchen.jpeg",
-      "https://sciame.com/wp-content/uploads/2023/09/12-Perelman-Performing-Arts-Center-mechanical-room.-Image-Iwan-Baan.-.jpg",
+      "/images/mep-1.jpeg",
+      "/images/mep-2.jpeg",
+      "/images/mep-3.jpeg",
     ],
   },
   {
