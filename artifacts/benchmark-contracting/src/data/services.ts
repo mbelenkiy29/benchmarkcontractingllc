@@ -197,6 +197,13 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
+    heroImages: [
+      "/images/plaster-1.jpeg",
+      "/images/plaster-2.jpeg",
+      "/images/plaster-3.jpeg",
+      "/images/plaster-4.jpeg",
+      "/images/plaster-5.jpeg",
+    ],
   },
   {
     slug: "residential-construction",
