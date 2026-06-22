@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
-import logoSrc from "@assets/Benchmark_1775063903268.png";
+import logoSrc from "@assets/FullLogo_Transparent_NoBuffer_1781838371080.PNG";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -25,14 +25,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <Link href="/">
-              <div className="cursor-pointer overflow-hidden relative" style={{ width: "200px", height: "44px" }}>
-                <img
-                  src={logoSrc}
-                  alt="Benchmark Contracting Group"
-                  className="absolute"
-                  style={{ width: "200px", top: "-77px" }}
-                />
-              </div>
+              <img
+                src={logoSrc}
+                alt="Benchmark Contracting Group"
+                className="cursor-pointer h-14 w-auto"
+              />
             </Link>
             <p className="text-white/60 leading-relaxed max-w-sm">
               New York's trusted partner for high-end residential, commercial, and luxury retail construction. Excellence built from the ground up.

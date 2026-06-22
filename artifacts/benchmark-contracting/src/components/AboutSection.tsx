@@ -67,7 +67,6 @@ export default function AboutSection() {
               <img
                 src="/images/project-retail.jpg"
                 alt="Craftsmanship and precision"
-                loading="lazy"
                 className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
               />
 
