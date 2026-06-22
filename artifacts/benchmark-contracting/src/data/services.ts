@@ -148,6 +148,12 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "All NYC Boroughs" },
       { label: "Estimate", value: "Free Consultation" },
     ],
+    heroImages: [
+      "/images/acoustic-1.jpeg",
+      "/images/acoustic-2.jpeg",
+      "/images/acoustic-3.jpeg",
+      "/images/acoustic-4.jpeg",
+    ],
   },
   {
     slug: "plaster-stucco",
