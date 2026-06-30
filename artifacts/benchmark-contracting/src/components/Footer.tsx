@@ -103,6 +103,17 @@ export default function Footer() {
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
+
+        <div className="mt-6 pt-4 border-t border-white/5 flex justify-center">
+          <a
+            href="https://sentineltechsolutions.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/5 text-white/40 text-xs hover:bg-white/10 hover:text-primary transition-colors"
+          >
+            Managed by&nbsp;<span className="font-semibold">Sentinel Tech Solutions LLC</span>
+          </a>
+        </div>
       </div>
     </footer>
   );
