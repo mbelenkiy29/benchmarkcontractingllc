@@ -6,71 +6,100 @@ const ALL = "All";
 
 const categories = [
   ALL,
-  "Commercial",
-  "Residential Kitchen Remodeling",
-  "Hospitality",
+  "Renovation",
+  "Surfaces & Finishes",
   "Construction",
-  "Luxury Retail",
+  "Outdoor",
 ];
 
 const categoryColors: Record<string, string> = {
-  "Luxury Retail": "bg-primary text-white",
-  "Commercial": "bg-blue-500/80 text-white",
-  "Residential Kitchen Remodeling": "bg-emerald-600/80 text-white",
-  "Hospitality": "bg-purple-600/80 text-white",
-  "Construction": "bg-amber-600/80 text-white",
+  "Renovation":          "bg-primary text-white",
+  "Surfaces & Finishes": "bg-blue-500/80 text-white",
+  "Construction":        "bg-amber-600/80 text-white",
+  "Outdoor":             "bg-emerald-600/80 text-white",
 };
 
 const projects = [
   {
-    image: "/images/project-louis-vuitton.png",
-    title: "Louis Vuitton NYC",
-    category: "Luxury Retail",
-    description: "Contributed to the construction of the iconic new Louis Vuitton flagship on Fifth Avenue — a landmark in luxury retail architecture.",
-    location: "Fifth Avenue, New York City",
+    image: "/images/interior-1.jpeg",
+    title: "Luxury Interior Finishes",
+    category: "Renovation",
+    description:
+      "Custom millwork, skim coating, high-end painting, and luxury-standard punch list completion across a full residential gut renovation.",
+    location: "Manhattan, New York City",
     featured: true,
   },
   {
-    image: "/images/project-corporate-hq.jpeg",
-    title: "Corporate Headquarters",
-    category: "Commercial",
-    description: "Full build-out of a modern glass-facade corporate headquarters — precision engineering from structural steel to interior finishes.",
+    image: "/images/bathroom-new-5.jpeg",
+    title: "Spa-Inspired Bathroom Renovation",
+    category: "Renovation",
+    description:
+      "Full bathroom gut renovation with large-format stone tile, frameless glass enclosure, freestanding tub, and radiant floor heating.",
+    location: "Upper West Side, Manhattan",
+  },
+  {
+    image: "/images/kitchen-1.jpeg",
+    title: "Custom Kitchen Remodel",
+    category: "Renovation",
+    description:
+      "Complete kitchen transformation — bespoke cabinetry, marble countertops, premium appliances, and designer lighting throughout.",
+    location: "Brooklyn, New York",
+  },
+  {
+    image: "/images/epoxy-2.jpeg",
+    title: "Metallic Epoxy Resin Floor",
+    category: "Surfaces & Finishes",
+    description:
+      "High-gloss metallic epoxy system installed in a commercial showroom — seamless, durable, and built to handle heavy daily traffic.",
+    location: "Long Island City, Queens",
+  },
+  {
+    image: "/images/plaster-0.jpeg",
+    title: "Venetian Plaster & Stucco",
+    category: "Surfaces & Finishes",
+    description:
+      "Interior Venetian plaster and exterior EIFS stucco system delivering a flawless, high-end finish with lasting moisture resistance.",
     location: "Westchester, New York",
   },
   {
-    image: "/images/project-tech-campus.jpeg",
-    title: "Major Tech Campus",
-    category: "Commercial",
-    description: "Large-scale commercial construction for a leading technology company, blending industrial design with sustainable green architecture.",
-    location: "New York City",
+    image: "/images/flooring-1.jpeg",
+    title: "Wide-Plank Hardwood Flooring",
+    category: "Surfaces & Finishes",
+    description:
+      "Installation and finishing of wide-plank engineered hardwood across a full-floor residential renovation, including stair treads.",
+    location: "Park Slope, Brooklyn",
   },
   {
-    image: "/images/project-kitchen-residential.jpeg",
-    title: "Luxury Kitchen Remodel",
-    category: "Residential Kitchen Remodeling",
-    description: "Complete residential kitchen transformation — custom cabinetry, marble countertops, premium appliances, and designer pendant lighting.",
-    location: "Upper East Side, Manhattan",
+    image: "/images/project-corporate-hq.jpeg",
+    title: "Corporate Headquarters Build-Out",
+    category: "Construction",
+    description:
+      "Full commercial build-out of a modern corporate headquarters — structural framing, MEP coordination, and premium interior finishes.",
+    location: "Westchester, New York",
   },
   {
     image: "/images/project-ground-up.jpeg",
     title: "Ground-Up Commercial Build",
     category: "Construction",
-    description: "Complex ground-up construction in lower Manhattan — structural steel, curtain wall systems, and precision coordination in a dense urban environment.",
+    description:
+      "Complex ground-up construction in a dense urban environment — structural steel, curtain wall systems, and precision trade coordination.",
     location: "Lower Manhattan, NYC",
   },
   {
-    image: "/images/project-restaurant-kitchen.jpeg",
-    title: "Commercial Kitchen Build-Out",
-    category: "Hospitality",
-    description: "Full commercial kitchen installation for a high-volume NYC restaurant — NSF-compliant equipment layout, ventilation systems, and fire suppression.",
-    location: "Tribeca, New York City",
+    image: "/images/landscaping-5.jpeg",
+    title: "Outdoor Patio & Fire Pit",
+    category: "Outdoor",
+    description:
+      "Custom hardscape patio with a built-in stone fire pit, premium pavers, and full outdoor seating area for a residential client.",
+    location: "Staten Island, New York",
   },
   {
-    image: "/images/project-landmark.jpeg",
-    title: "Landmark Site Construction",
-    category: "Construction",
-    description: "High-stakes construction work at one of New York City's most recognized sites — precision welding, structural reinforcement, and full compliance with landmark requirements.",
-    location: "Lower Manhattan, NYC",
+    image: "/images/landscaping-1.jpeg",
+    title: "Outdoor Fireplace & Patio",
+    category: "Outdoor",
+    description:
+      "Masonry outdoor fireplace with flanking planter walls, flagstone patio, and integrated landscaping for a luxury backyard retreat.",
+    location: "Westchester, New York",
   },
 ];
 
@@ -85,7 +114,8 @@ export default function ProjectsSection() {
       ? rest
       : rest.filter((p) => p.category === activeCategory);
 
-  const showFeatured = activeCategory === ALL || activeCategory === "Luxury Retail";
+  const showFeatured =
+    activeCategory === ALL || activeCategory === "Renovation";
 
   return (
     <section id="projects" className="py-24 md:py-32 bg-white relative">
@@ -107,7 +137,7 @@ export default function ProjectsSection() {
             Built to Impress. Built to Last.
           </h2>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            A selection of our work across residential, commercial, hospitality, and luxury retail sectors in New York.
+            A selection of our work across renovations, custom finishes, construction, and outdoor spaces in New York.
           </p>
         </motion.div>
 
@@ -158,7 +188,6 @@ export default function ProjectsSection() {
                 <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-2 group-hover:translate-y-0">
                   <ArrowUpRight className="w-5 h-5 text-white" />
                 </div>
-                {/* Title inside image at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 group-hover:text-primary transition-colors">
                     {featured.title}
@@ -172,7 +201,6 @@ export default function ProjectsSection() {
                   </div>
                 </div>
               </div>
-              {/* Mobile description */}
               <div className="p-6 md:hidden">
                 <p className="text-sm text-gray-600 leading-relaxed">{featured.description}</p>
               </div>
