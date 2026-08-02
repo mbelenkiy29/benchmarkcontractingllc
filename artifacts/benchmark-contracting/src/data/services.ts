@@ -323,6 +323,11 @@ export const servicesData: ServiceData[] = [
       "/images/mep-1.jpeg",
       "/images/mep-2.jpeg",
       "/images/mep-3.jpeg",
+      "/images/plumbing-4.jpeg",
+      "/images/plumbing-5.jpeg",
+      "/images/plumbing-6.jpeg",
+      "/images/plumbing-7.jpeg",
+      "/images/plumbing-8.jpeg",
     ],
   },
   {
