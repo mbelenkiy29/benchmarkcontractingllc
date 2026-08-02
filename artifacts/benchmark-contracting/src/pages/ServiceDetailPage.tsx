@@ -102,7 +102,7 @@ export default function ServiceDetailPage() {
                   key={images[imgIndex]}
                   src={images[imgIndex]}
                   alt={`${service.title} photo ${imgIndex + 1}`}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-contain"
                   custom={direction}
                   initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
