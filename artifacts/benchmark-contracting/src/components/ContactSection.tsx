@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Paperclip, X, FileImage } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
@@ -18,6 +18,9 @@ const projectTypes = [
 export default function ContactSection() {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
+  const [files, setFiles] = useState<File[]>([]);
+  const [dragOver, setDragOver] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -30,6 +33,27 @@ export default function ContactSection() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const addFiles = (incoming: FileList | null) => {
+    if (!incoming) return;
+    const allowed = Array.from(incoming).filter((f) =>
+      f.type.startsWith("image/") || f.type === "application/pdf"
+    );
+    setFiles((prev) => {
+      const existing = new Set(prev.map((f) => f.name + f.size));
+      return [...prev, ...allowed.filter((f) => !existing.has(f.name + f.size))];
+    });
+  };
+
+  const removeFile = (index: number) => {
+    setFiles((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragOver(false);
+    addFiles(e.dataTransfer.files);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -46,6 +70,7 @@ export default function ContactSection() {
         description: "We'll be in touch within one business day.",
       });
       setForm({ name: "", email: "", phone: "", projectType: "", message: "" });
+      setFiles([]);
     }, 1200);
   };
 
@@ -234,6 +259,58 @@ export default function ContactSection() {
                   className={inputClass + " resize-none"}
                   data-testid="input-message"
                 />
+              </div>
+
+              {/* File Upload */}
+              <div>
+                <label className="block text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
+                  Upload Documents / Photos <span className="text-gray-400 font-normal normal-case">(optional — helps us estimate)</span>
+                </label>
+                <div
+                  onClick={() => fileInputRef.current?.click()}
+                  onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+                  onDragLeave={() => setDragOver(false)}
+                  onDrop={handleDrop}
+                  className={`border-2 border-dashed rounded-sm px-4 py-6 flex flex-col items-center gap-2 cursor-pointer transition-colors duration-200 ${
+                    dragOver
+                      ? "border-primary bg-primary/5"
+                      : "border-gray-300 hover:border-primary/50 hover:bg-gray-50"
+                  }`}
+                >
+                  <Paperclip className="w-5 h-5 text-gray-400" />
+                  <p className="text-sm text-gray-500 text-center">
+                    <span className="text-primary font-semibold">Click to browse</span> or drag & drop files here
+                  </p>
+                  <p className="text-xs text-gray-400">Images (JPG, PNG, HEIC) and PDFs accepted</p>
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    multiple
+                    accept="image/*,.pdf"
+                    className="hidden"
+                    onChange={(e) => addFiles(e.target.files)}
+                  />
+                </div>
+
+                {files.length > 0 && (
+                  <ul className="mt-3 space-y-2">
+                    {files.map((file, i) => (
+                      <li key={i} className="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-sm px-3 py-2">
+                        <FileImage className="w-4 h-4 text-primary shrink-0" />
+                        <span className="text-sm text-gray-700 truncate flex-1">{file.name}</span>
+                        <span className="text-xs text-gray-400 shrink-0">{(file.size / 1024).toFixed(0)} KB</span>
+                        <button
+                          type="button"
+                          onClick={() => removeFile(i)}
+                          className="text-gray-400 hover:text-red-500 transition-colors shrink-0"
+                          aria-label="Remove file"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
               <Button
