@@ -12,6 +12,7 @@ export default function ServiceDetailPage() {
   const service = servicesBySlug[params.slug ?? ""];
   const [imgIndex, setImgIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [hasNavigated, setHasNavigated] = useState(false);
 
   if (!service) {
     return (
@@ -32,10 +33,12 @@ export default function ServiceDetailPage() {
   const hasImages = images.length > 0;
 
   const prev = () => {
+    setHasNavigated(true);
     setDirection(-1);
     setImgIndex((i) => (i - 1 + images.length) % images.length);
   };
   const next = () => {
+    setHasNavigated(true);
     setDirection(1);
     setImgIndex((i) => (i + 1) % images.length);
   };
@@ -104,7 +107,7 @@ export default function ServiceDetailPage() {
                   alt={`${service.title} photo ${imgIndex + 1}`}
                   className="absolute inset-0 w-full h-full object-contain"
                   custom={direction}
-                  initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
+                  initial={hasNavigated ? { x: direction > 0 ? "100%" : "-100%", opacity: 0 } : false}
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: direction > 0 ? "-100%" : "100%", opacity: 0 }}
                   transition={{ duration: 0.45, ease: "easeInOut" }}
@@ -135,7 +138,7 @@ export default function ServiceDetailPage() {
                   {images.map((_, i) => (
                     <button
                       key={i}
-                      onClick={() => { setDirection(i > imgIndex ? 1 : -1); setImgIndex(i); }}
+                      onClick={() => { setHasNavigated(true); setDirection(i > imgIndex ? 1 : -1); setImgIndex(i); }}
                       className={`w-1.5 h-1.5 rounded-full transition-all ${
                         i === imgIndex ? "bg-white scale-125" : "bg-white/50"
                       }`}

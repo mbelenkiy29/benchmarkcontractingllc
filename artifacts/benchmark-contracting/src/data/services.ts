@@ -414,6 +414,35 @@ export const servicesData: ServiceData[] = [
     heroImages: ["/images/project-tech-campus.jpeg"],
   },
   {
+    slug: "lighting",
+    title: "Lighting Services",
+    tagline: "Light That Transforms Every Space.",
+    description:
+      "From recessed architectural lighting to dramatic feature installations, Benchmark designs and installs lighting systems that elevate any environment. We work with architects, designers, and owners to create layered lighting plans that are as functional as they are beautiful — across residential, commercial, and hospitality projects.",
+    features: [
+      "Recessed and architectural lighting installation",
+      "LED strip and feature lighting",
+      "Staircase and step lighting",
+      "Under-cabinet and accent lighting",
+      "Pendant and chandelier installation",
+      "Smart lighting and dimmer systems",
+      "Exterior and landscape lighting",
+      "Commercial and hospitality lighting fit-outs",
+    ],
+    highlights: [
+      { label: "Experience", value: "40+ Years" },
+      { label: "Service Area", value: "All NYC Boroughs" },
+      { label: "Estimate", value: "Free Consultation" },
+    ],
+    heroImages: [
+      "/images/lighting-1.jpeg",
+      "/images/lighting-2.jpeg",
+      "/images/lighting-3.jpeg",
+      "/images/lighting-4.jpeg",
+      "/images/lighting-5.jpeg",
+    ],
+  },
+  {
     slug: "landscaping",
     title: "Landscaping",
     tagline: "Outdoor Spaces, Expertly Crafted.",
