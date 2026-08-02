@@ -248,12 +248,6 @@ export const servicesData: ServiceData[] = [
     ],
     heroImages: [
       "/images/project-corporate-hq.jpeg",
-      "/images/project-louis-vuitton.png",
-      "https://sciame.com/wp-content/uploads/2025/04/LV-2411-01-scaled.jpg",
-      "https://sciame.com/wp-content/uploads/2025/04/LV-2411-38-scaled.jpg",
-      "https://sciame.com/wp-content/uploads/2025/04/LV-2411-41-scaled.jpg",
-      "https://sciame.com/wp-content/uploads/2025/04/LV-2411-50-scaled.jpg",
-      "https://sciame.com/wp-content/uploads/2025/04/LV-2411-52-scaled.jpg",
       "https://sciame.com/wp-content/uploads/2023/09/01-Perelman-Performing-Arts-Center-designed-by-REX.-Image-Iwan-Baan.-.jpg",
       "https://sciame.com/wp-content/uploads/2025/06/esto_2024DS20-015-scaled.jpg",
     ],
