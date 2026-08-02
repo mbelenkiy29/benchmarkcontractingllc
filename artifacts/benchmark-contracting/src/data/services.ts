@@ -374,32 +374,6 @@ export const servicesData: ServiceData[] = [
     ],
   },
   {
-    slug: "specialty-services",
-    title: "Specialty Services",
-    tagline: "When the Project Demands More.",
-    description:
-      "Some projects don't fit a standard mold — and that's where Benchmark excels. We specialize in luxury flagship builds, value engineering, fast-track delivery, and turnkey solutions for clients who can't afford anything less than perfect.",
-    features: [
-      "Luxury retail flagship builds (LV, Dior-level execution)",
-      "Fast-track and deadline-critical delivery",
-      "Value engineering and cost optimization",
-      "Turnkey design-build solutions",
-      "High-end residential finishes",
-      "Historic restoration and preservation",
-      "Custom architectural feature fabrication",
-      "Owner's representative services",
-    ],
-    highlights: [
-      { label: "Experience", value: "40+ Years" },
-      { label: "Service Area", value: "All NYC Boroughs" },
-      { label: "Estimate", value: "Free Consultation" },
-    ],
-    heroImages: [
-      "https://sciame.com/wp-content/uploads/2023/09/11-Perelman-Performing-Arts-Center-John-E.-Zuccotti-Theater-during-load-in-for-first-performances.-Image-Iwan-Baan.-.jpg",
-      "https://sciame.com/wp-content/uploads/2025/06/esto_2024DS20-055-scaled.jpg",
-    ],
-  },
-  {
     slug: "building-performance",
     title: "Building Performance",
     tagline: "Smarter Buildings. Lower Costs.",
