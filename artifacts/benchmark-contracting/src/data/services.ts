@@ -118,7 +118,6 @@ export const servicesData: ServiceData[] = [
       "/images/epoxy-2.jpeg",
       "/images/epoxy-3.jpeg",
       "/images/epoxy-4.jpeg",
-      "/images/epoxy-5.jpeg",
       "/images/epoxy-6.jpeg",
     ],
   },
