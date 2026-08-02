@@ -194,6 +194,7 @@ export const servicesData: ServiceData[] = [
       { label: "Estimate", value: "Free Consultation" },
     ],
     heroImages: [
+      "/images/plaster-0.jpeg",
       "/images/plaster-1.jpeg",
       "/images/plaster-2.jpeg",
       "/images/plaster-3.jpeg",
