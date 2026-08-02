@@ -412,6 +412,29 @@ export const servicesData: ServiceData[] = [
     heroImages: ["/images/project-tech-campus.jpeg"],
   },
   {
+    slug: "landscaping",
+    title: "Landscaping",
+    tagline: "Outdoor Spaces, Expertly Crafted.",
+    description:
+      "Benchmark brings the same precision and quality to outdoor environments that we deliver inside. From luxury rooftop terraces to manicured private gardens and commercial exterior spaces, we design and build landscapes that complement your property and stand up to New York's climate.",
+    features: [
+      "Landscape design and installation",
+      "Rooftop and terrace gardens",
+      "Hardscaping — patios, walkways & retaining walls",
+      "Planting and tree installation",
+      "Irrigation and drainage systems",
+      "Outdoor lighting installation",
+      "Lawn grading and turf installation",
+      "Seasonal maintenance and upkeep",
+    ],
+    highlights: [
+      { label: "Experience", value: "40+ Years" },
+      { label: "Service Area", value: "NYC & Westchester" },
+      { label: "Estimate", value: "Free Consultation" },
+    ],
+    heroImages: [],
+  },
+  {
     slug: "compliance-safety",
     title: "Compliance & Safety",
     tagline: "Built Right. Built Safe.",
