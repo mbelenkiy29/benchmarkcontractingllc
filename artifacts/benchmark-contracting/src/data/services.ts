@@ -90,8 +90,6 @@ export const servicesData: ServiceData[] = [
       "/images/flooring-1.jpeg",
       "/images/flooring-2.jpeg",
       "/images/flooring-3.jpeg",
-      "/images/flooring-4.jpeg",
-      "/images/flooring-5.jpeg",
     ],
   },
   {
