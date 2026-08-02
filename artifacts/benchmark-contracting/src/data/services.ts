@@ -472,7 +472,14 @@ export const servicesData: ServiceData[] = [
       { label: "Service Area", value: "NYC & Westchester" },
       { label: "Estimate", value: "Free Consultation" },
     ],
-    heroImages: [],
+    heroImages: [
+      "/images/landscaping-1.jpeg",
+      "/images/landscaping-2.jpeg",
+      "/images/landscaping-3.jpeg",
+      "/images/landscaping-4.jpeg",
+      "/images/landscaping-5.jpeg",
+      "/images/landscaping-6.jpeg",
+    ],
   },
   {
     slug: "compliance-safety",
