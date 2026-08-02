@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoSrc from "@assets/FullLogo_Transparent_NoBuffer_1781838371080.PNG";
+import logoSrc from "@assets/BENCHMARK_LOGO_1785646359770.png";
 import { servicesData } from "@/data/services";
 
 const serviceMenuItems = servicesData.map((s) => ({
