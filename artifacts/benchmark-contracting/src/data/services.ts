@@ -62,6 +62,12 @@ export const servicesData: ServiceData[] = [
       "/images/bathroom-new-3.jpeg",
       "/images/bathroom-new-4.jpeg",
       "/images/bathroom-new-5.jpeg",
+      "/images/bathroom-new-6.jpeg",
+      "/images/bathroom-new-7.jpeg",
+      "/images/bathroom-new-8.jpeg",
+      "/images/bathroom-new-9.jpeg",
+      "/images/bathroom-new-10.jpeg",
+      "/images/bathroom-new-11.jpeg",
     ],
   },
   {
