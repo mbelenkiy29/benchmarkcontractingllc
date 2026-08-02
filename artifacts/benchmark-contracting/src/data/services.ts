@@ -32,7 +32,6 @@ export const servicesData: ServiceData[] = [
     ],
     heroImages: [
       "/images/kitchen-1.jpeg",
-      "/images/kitchen-2.jpeg",
       "/images/kitchen-3.jpeg",
       "/images/kitchen-4.jpeg",
     ],
