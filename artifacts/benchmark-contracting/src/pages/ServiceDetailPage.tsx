@@ -21,7 +21,7 @@ export default function ServiceDetailPage() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Service Not Found</h1>
             <Link href="/services">
-              <Button className="bg-primary text-white">Back to Services</Button>
+              <Button className="bg-gray-900 hover:bg-gray-700 !border-gray-900 text-white">Back to Services</Button>
             </Link>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function ServiceDetailPage() {
             }`}
           >
             <Link href="/services">
-              <span className="inline-flex items-center gap-2 text-white/50 hover:text-primary transition-colors text-sm mb-6 cursor-pointer">
+              <span className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm mb-6 cursor-pointer">
                 <ArrowLeft className="w-4 h-4" /> All Services
               </span>
             </Link>
@@ -66,21 +66,21 @@ export default function ServiceDetailPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-block px-4 py-1.5 mb-4 border border-primary/30 bg-primary/10 rounded-sm">
-                <span className="text-primary font-semibold tracking-wider text-sm uppercase">
+              <div className="inline-block px-4 py-1.5 mb-4 border border-white/30 bg-white/10 rounded-sm">
+                <span className="text-white font-semibold tracking-wider text-sm uppercase">
                   Benchmark Contracting
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
                 {service.title}
               </h1>
-              <p className="text-xl text-primary font-semibold mb-4">{service.tagline}</p>
+              <p className="text-xl text-white/80 font-semibold mb-4">{service.tagline}</p>
               <p className="text-base md:text-lg text-white/70 leading-relaxed mb-8">
                 {service.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact">
-                  <Button className="bg-primary hover:bg-primary/90 text-white font-bold h-12 px-8 rounded-sm">
+                  <Button className="bg-white hover:bg-gray-200 !border-gray-200 text-gray-900 font-bold h-12 px-8 rounded-sm">
                     Get a Free Estimate
                   </Button>
                 </Link>
@@ -152,7 +152,7 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Stats Bar */}
-      <div className="bg-primary">
+      <div className="bg-black">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-wrap divide-x divide-white/20">
             {service.highlights.map((h, i) => (
@@ -178,8 +178,8 @@ export default function ServiceDetailPage() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="h-px w-10 bg-primary" />
-                  <span className="text-primary font-semibold uppercase tracking-wider text-sm">
+                  <div className="h-px w-10 bg-gray-900" />
+                  <span className="text-gray-900 font-semibold uppercase tracking-wider text-sm">
                     What's Included
                   </span>
                 </div>
@@ -196,7 +196,7 @@ export default function ServiceDetailPage() {
                       transition={{ duration: 0.4, delay: i * 0.05 }}
                       className="flex items-start gap-3 p-4 bg-gray-50 rounded-sm border border-gray-100"
                     >
-                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-gray-900 shrink-0 mt-0.5" />
                       <span className="text-gray-700 text-sm font-medium leading-snug">{feature}</span>
                     </motion.div>
                   ))}
@@ -220,7 +220,7 @@ export default function ServiceDetailPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/contact">
-                    <Button className="bg-primary hover:bg-primary/90 text-white font-bold rounded-sm px-6">
+                    <Button className="bg-white hover:bg-gray-200 !border-gray-200 text-gray-900 font-bold rounded-sm px-6">
                       Start Your Project
                     </Button>
                   </Link>
@@ -245,29 +245,29 @@ export default function ServiceDetailPage() {
                 <div className="flex flex-col gap-1">
                   {otherServices.map((s) => (
                     <Link key={s.slug} href={`/services/${s.slug}`}>
-                      <span className="flex items-center justify-between px-4 py-3 rounded-sm border border-gray-100 hover:border-primary/40 hover:bg-primary/5 hover:text-primary transition-all group cursor-pointer text-sm text-gray-600 font-medium">
+                      <span className="flex items-center justify-between px-4 py-3 rounded-sm border border-gray-100 hover:border-gray-900/40 hover:bg-gray-50 hover:text-gray-900 transition-all group cursor-pointer text-sm text-gray-600 font-medium">
                         {s.title}
-                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-gray-900" />
                       </span>
                     </Link>
                   ))}
                 </div>
 
                 {/* CTA Box */}
-                <div className="mt-6 p-6 bg-primary/5 border border-primary/20 rounded-sm">
-                  <div className="text-2xl font-bold text-primary mb-1">Free Estimate</div>
+                <div className="mt-6 p-6 bg-gray-50 border border-gray-200 rounded-sm">
+                  <div className="text-2xl font-bold text-gray-900 mb-1">Free Estimate</div>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">
                     Ready to get started? Contact us for a no-obligation consultation and detailed project
                     estimate.
                   </p>
                   <Link href="/contact">
-                    <Button className="w-full bg-primary hover:bg-primary/90 text-white font-bold rounded-sm">
+                    <Button className="w-full bg-gray-900 hover:bg-gray-700 !border-gray-900 text-white font-bold rounded-sm">
                       Get in Touch
                     </Button>
                   </Link>
                   <a
                     href="tel:3473235535"
-                    className="block text-center mt-3 text-sm text-gray-500 hover:text-primary transition-colors"
+                    className="block text-center mt-3 text-sm text-gray-500 hover:text-gray-900 transition-colors"
                   >
                     (347) 323-5535
                   </a>
