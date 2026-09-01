@@ -35,13 +35,13 @@ export default function Footer() {
               New York's trusted partner for high-end residential, commercial, and luxury retail construction. Excellence built from the ground up.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>
@@ -53,7 +53,7 @@ export default function Footer() {
               {quickLinks.map(({ label, href }) => (
                 <li key={href}>
                   <Link href={href}>
-                    <span className="text-white/60 hover:text-primary transition-colors cursor-pointer">
+                    <span className="text-white/60 hover:text-white transition-colors cursor-pointer">
                       {label}
                     </span>
                   </Link>
@@ -68,7 +68,7 @@ export default function Footer() {
               {serviceLinks.map((s) => (
                 <li key={s}>
                   <Link href="/services">
-                    <span className="hover:text-primary transition-colors cursor-pointer">{s}</span>
+                    <span className="hover:text-white transition-colors cursor-pointer">{s}</span>
                   </Link>
                 </li>
               ))}
@@ -79,15 +79,15 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/60">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-white shrink-0 mt-0.5" />
                 <span>New York City & Surrounding Areas</span>
               </li>
               <li className="flex items-center gap-3 text-white/60">
-                <Phone className="w-5 h-5 text-primary shrink-0" />
+                <Phone className="w-5 h-5 text-white shrink-0" />
                 <a href="tel:3473235535" className="hover:text-white transition-colors">(347) 323-5535</a>
               </li>
               <li className="flex items-center gap-3 text-white/60">
-                <Mail className="w-5 h-5 text-primary shrink-0" />
+                <Mail className="w-5 h-5 text-white shrink-0" />
                 <a href="mailto:info@benchmarkcontractingllc.com" className="hover:text-white transition-colors">info@benchmarkcontractingllc.com</a>
               </li>
             </ul>

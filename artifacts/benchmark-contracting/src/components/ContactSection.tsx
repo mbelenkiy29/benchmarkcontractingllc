@@ -75,11 +75,10 @@ export default function ContactSection() {
   };
 
   const inputClass =
-    "w-full bg-white border border-gray-300 text-gray-900 placeholder-gray-400 rounded-sm px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200";
+    "w-full bg-white border border-neutral-300 text-neutral-900 placeholder-neutral-400 rounded-sm px-4 py-3 text-sm outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 transition-all duration-200";
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-gray-50 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,102,0,0.04)_0%,_transparent_60%)]" />
+    <section id="contact" className="py-24 md:py-32 bg-neutral-50 relative overflow-hidden">
 
       <div className="container mx-auto px-4 md:px-6 relative">
         <motion.div
@@ -90,14 +89,14 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-px w-12 bg-primary" />
-            <span className="text-primary font-semibold uppercase tracking-wider text-sm">Get in Touch</span>
-            <div className="h-px w-12 bg-primary" />
+            <div className="h-px w-12 bg-neutral-900" />
+            <span className="text-neutral-900 font-semibold uppercase tracking-wider text-sm">Get in Touch</span>
+            <div className="h-px w-12 bg-neutral-900" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
             Ready to Build Something Great?
           </h2>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-500 max-w-2xl mx-auto">
             Tell us about your project. We'll respond within one business day with a plan.
           </p>
         </motion.div>
@@ -112,18 +111,18 @@ export default function ContactSection() {
             className="lg:col-span-2 flex flex-col gap-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Let's Talk</h3>
+              <h3 className="text-2xl font-bold text-neutral-900 mb-6">Let's Talk</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-sm bg-neutral-100 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-neutral-900" />
                   </div>
                   <div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wider mb-1 font-semibold">Phone</div>
+                    <div className="text-xs text-neutral-400 uppercase tracking-wider mb-1 font-semibold">Phone</div>
                     <a
                       href="tel:3473235535"
                       data-testid="contact-phone"
-                      className="text-gray-900 hover:text-primary transition-colors font-medium text-lg"
+                      className="text-neutral-900 hover:text-neutral-600 transition-colors font-medium text-lg"
                     >
                       (347) 323-5535
                     </a>
@@ -131,15 +130,15 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-sm bg-neutral-100 flex items-center justify-center shrink-0">
+                    <Mail className="w-5 h-5 text-neutral-900" />
                   </div>
                   <div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wider mb-1 font-semibold">Email</div>
+                    <div className="text-xs text-neutral-400 uppercase tracking-wider mb-1 font-semibold">Email</div>
                     <a
                       href="mailto:info@benchmarkcontractingllc.com"
                       data-testid="contact-email"
-                      className="text-gray-900 hover:text-primary transition-colors font-medium"
+                      className="text-neutral-900 hover:text-neutral-600 transition-colors font-medium"
                     >
                       info@benchmarkcontractingllc.com
                     </a>
@@ -147,21 +146,21 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-sm bg-neutral-100 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-neutral-900" />
                   </div>
                   <div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wider mb-1 font-semibold">Service Area</div>
-                    <p className="text-gray-900 font-medium">New York City & Surrounding Areas</p>
-                    <p className="text-gray-500 text-sm mt-1">Manhattan · Brooklyn · Queens · The Bronx · Staten Island · Westchester</p>
+                    <div className="text-xs text-neutral-400 uppercase tracking-wider mb-1 font-semibold">Service Area</div>
+                    <p className="text-neutral-900 font-medium">New York City & Surrounding Areas</p>
+                    <p className="text-neutral-500 text-sm mt-1">Manhattan · Brooklyn · Queens · The Bronx · Staten Island · Westchester</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="border border-gray-200 rounded-sm p-6 bg-white shadow-sm">
-              <div className="text-3xl font-bold text-primary mb-1">Free Estimates</div>
-              <p className="text-gray-500 text-sm leading-relaxed">
+            <div className="border border-neutral-200 rounded-sm p-6 bg-white shadow-sm">
+              <div className="text-3xl font-bold text-neutral-900 mb-1">Free Estimates</div>
+              <p className="text-neutral-500 text-sm leading-relaxed">
                 Every project starts with a no-obligation consultation and detailed cost estimate. No guesswork, no surprises.
               </p>
             </div>
@@ -178,12 +177,12 @@ export default function ContactSection() {
             <form
               onSubmit={handleSubmit}
               data-testid="contact-form"
-              className="border border-gray-200 rounded-sm p-8 bg-white shadow-sm space-y-5"
+              className="border border-neutral-200 rounded-sm p-8 bg-white shadow-sm space-y-5"
             >
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
-                    Full Name <span className="text-primary">*</span>
+                  <label className="block text-xs text-neutral-500 uppercase tracking-wider mb-2 font-semibold">
+                    Full Name <span className="text-neutral-900">*</span>
                   </label>
                   <input
                     name="name"
@@ -195,8 +194,8 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
-                    Email Address <span className="text-primary">*</span>
+                  <label className="block text-xs text-neutral-500 uppercase tracking-wider mb-2 font-semibold">
+                    Email Address <span className="text-neutral-900">*</span>
                   </label>
                   <input
                     name="email"
@@ -212,7 +211,7 @@ export default function ContactSection() {
 
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
+                  <label className="block text-xs text-neutral-500 uppercase tracking-wider mb-2 font-semibold">
                     Phone Number
                   </label>
                   <input
@@ -226,7 +225,7 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
+                  <label className="block text-xs text-neutral-500 uppercase tracking-wider mb-2 font-semibold">
                     Project Type
                   </label>
                   <select
@@ -247,8 +246,8 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
-                  Project Description <span className="text-primary">*</span>
+                <label className="block text-xs text-neutral-500 uppercase tracking-wider mb-2 font-semibold">
+                  Project Description <span className="text-neutral-900">*</span>
                 </label>
                 <textarea
                   name="message"
@@ -263,8 +262,8 @@ export default function ContactSection() {
 
               {/* File Upload */}
               <div>
-                <label className="block text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
-                  Upload Documents / Photos <span className="text-gray-400 font-normal normal-case">(optional — helps us estimate)</span>
+                <label className="block text-xs text-neutral-500 uppercase tracking-wider mb-2 font-semibold">
+                  Upload Documents / Photos <span className="text-neutral-400 font-normal normal-case">(optional — helps us estimate)</span>
                 </label>
                 <div
                   onClick={() => fileInputRef.current?.click()}
@@ -273,15 +272,15 @@ export default function ContactSection() {
                   onDrop={handleDrop}
                   className={`border-2 border-dashed rounded-sm px-4 py-6 flex flex-col items-center gap-2 cursor-pointer transition-colors duration-200 ${
                     dragOver
-                      ? "border-primary bg-primary/5"
-                      : "border-gray-300 hover:border-primary/50 hover:bg-gray-50"
+                      ? "border-neutral-900 bg-neutral-50"
+                      : "border-neutral-300 hover:border-neutral-900/50 hover:bg-neutral-50"
                   }`}
                 >
-                  <Paperclip className="w-5 h-5 text-gray-400" />
-                  <p className="text-sm text-gray-500 text-center">
-                    <span className="text-primary font-semibold">Click to browse</span> or drag & drop files here
+                  <Paperclip className="w-5 h-5 text-neutral-400" />
+                  <p className="text-sm text-neutral-500 text-center">
+                    <span className="text-neutral-900 font-semibold">Click to browse</span> or drag & drop files here
                   </p>
-                  <p className="text-xs text-gray-400">Images (JPG, PNG, HEIC) and PDFs accepted</p>
+                  <p className="text-xs text-neutral-400">Images (JPG, PNG, HEIC) and PDFs accepted</p>
                   <input
                     ref={fileInputRef}
                     type="file"
@@ -295,14 +294,14 @@ export default function ContactSection() {
                 {files.length > 0 && (
                   <ul className="mt-3 space-y-2">
                     {files.map((file, i) => (
-                      <li key={i} className="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-sm px-3 py-2">
-                        <FileImage className="w-4 h-4 text-primary shrink-0" />
-                        <span className="text-sm text-gray-700 truncate flex-1">{file.name}</span>
-                        <span className="text-xs text-gray-400 shrink-0">{(file.size / 1024).toFixed(0)} KB</span>
+                      <li key={i} className="flex items-center gap-3 bg-neutral-50 border border-neutral-200 rounded-sm px-3 py-2">
+                        <FileImage className="w-4 h-4 text-neutral-900 shrink-0" />
+                        <span className="text-sm text-neutral-700 truncate flex-1">{file.name}</span>
+                        <span className="text-xs text-neutral-400 shrink-0">{(file.size / 1024).toFixed(0)} KB</span>
                         <button
                           type="button"
                           onClick={() => removeFile(i)}
-                          className="text-gray-400 hover:text-red-500 transition-colors shrink-0"
+                          className="text-neutral-400 hover:text-red-500 transition-colors shrink-0"
                           aria-label="Remove file"
                         >
                           <X className="w-4 h-4" />
@@ -329,7 +328,7 @@ export default function ContactSection() {
                 )}
               </Button>
 
-              <p className="text-center text-xs text-gray-400">
+              <p className="text-center text-xs text-neutral-400">
                 We respond within 1 business day. No commitment required.
               </p>
             </form>

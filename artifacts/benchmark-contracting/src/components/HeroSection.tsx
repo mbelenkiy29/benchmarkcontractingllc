@@ -23,13 +23,13 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="inline-block px-4 py-1.5 mb-6 border border-primary/30 bg-primary/10 rounded-sm">
-              <span className="text-primary font-semibold tracking-wider text-sm uppercase">Premium General Contracting</span>
+            <div className="inline-block px-4 py-1.5 mb-6 border border-white/30 bg-black/30 rounded-sm">
+              <span className="text-white font-semibold tracking-wider text-sm uppercase">Premium General Contracting</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-6 leading-[1.1]">
               Building Excellence <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">
+              <span className="text-neutral-200">
                 From the Ground Up
               </span>
             </h1>
@@ -53,7 +53,7 @@ export default function HeroSection() {
                   data-testid="hero-request-quote"
                   variant="outline"
                   size="lg"
-                  className="border-primary text-primary hover:bg-primary hover:text-white font-bold h-14 px-8 text-lg rounded-sm bg-transparent"
+                  className="border-white/50 text-white hover:bg-white hover:text-neutral-950 font-bold h-14 px-8 text-lg rounded-sm bg-transparent"
                 >
                   Request a Quote
                 </Button>

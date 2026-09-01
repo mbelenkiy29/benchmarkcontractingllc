@@ -14,9 +14,9 @@ const categories = [
 
 const categoryColors: Record<string, string> = {
   "Renovation":          "bg-black/85 text-white",
-  "Surfaces & Finishes": "bg-gray-700/90 text-white",
-  "Construction":        "bg-gray-500/90 text-white",
-  "Outdoor":             "bg-white/90 text-gray-900",
+  "Surfaces & Finishes": "bg-neutral-700/90 text-white",
+  "Construction":        "bg-neutral-500/90 text-white",
+  "Outdoor":             "bg-white/90 text-neutral-900",
 };
 
 const projects = [
@@ -129,14 +129,14 @@ export default function ProjectsSection() {
           className="text-center mb-12"
         >
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-px w-12 bg-gray-900" />
-            <span className="text-gray-900 font-semibold uppercase tracking-wider text-sm">Our Portfolio</span>
-            <div className="h-px w-12 bg-gray-900" />
+            <div className="h-px w-12 bg-neutral-900" />
+            <span className="text-neutral-900 font-semibold uppercase tracking-wider text-sm">Our Portfolio</span>
+            <div className="h-px w-12 bg-neutral-900" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
             Built to Impress. Built to Last.
           </h2>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-500 max-w-2xl mx-auto">
             A selection of our work across renovations, custom finishes, construction, and outdoor spaces in New York.
           </p>
         </motion.div>
@@ -149,8 +149,8 @@ export default function ProjectsSection() {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 text-sm font-semibold uppercase tracking-wider rounded-sm border transition-all duration-200 ${
                 activeCategory === cat
-                  ? "bg-gray-900 border-gray-900 text-white"
-                  : "bg-white border-gray-300 text-gray-600 hover:border-gray-900 hover:text-gray-900"
+                  ? "bg-neutral-900 border-neutral-900 text-white"
+                  : "bg-white border-neutral-300 text-neutral-600 hover:border-neutral-900 hover:text-neutral-900"
               }`}
             >
               {cat}
@@ -167,7 +167,7 @@ export default function ProjectsSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4 }}
-              className="group relative overflow-hidden rounded-sm bg-gray-100 border border-gray-900/40 hover:border-gray-900 hover:shadow-xl transition-all duration-300 cursor-pointer mb-6"
+              className="group relative overflow-hidden rounded-sm bg-neutral-100 border border-neutral-900/40 hover:border-neutral-900 hover:shadow-xl transition-all duration-300 cursor-pointer mb-6"
             >
               <div className="aspect-[16/7] overflow-hidden relative">
                 <img
@@ -189,7 +189,7 @@ export default function ProjectsSection() {
                   <ArrowUpRight className="w-5 h-5 text-white" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 group-hover:text-gray-200 transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 group-hover:text-neutral-200 transition-colors">
                     {featured.title}
                   </h3>
                   <p className="text-base text-white/80 leading-relaxed max-w-2xl hidden md:block">
@@ -202,7 +202,7 @@ export default function ProjectsSection() {
                 </div>
               </div>
               <div className="p-6 md:hidden">
-                <p className="text-sm text-gray-600 leading-relaxed">{featured.description}</p>
+                <p className="text-sm text-neutral-600 leading-relaxed">{featured.description}</p>
               </div>
             </motion.div>
           )}
@@ -219,7 +219,7 @@ export default function ProjectsSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.35, delay: i * 0.06 }}
-                className="group relative overflow-hidden rounded-sm bg-white border border-gray-200 hover:border-gray-900/40 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                className="group relative overflow-hidden rounded-sm bg-white border border-neutral-200 hover:border-neutral-900/40 hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img
@@ -239,14 +239,14 @@ export default function ProjectsSection() {
                   </div>
                 </div>
                 <div className="p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
+                    <h3 className="text-lg font-bold text-neutral-900 mb-2 group-hover:text-neutral-700 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-gray-500 mb-3 leading-relaxed">
+                  <p className="text-sm text-neutral-500 mb-3 leading-relaxed">
                     {project.description}
                   </p>
-                  <div className="flex items-center gap-2 text-xs text-gray-400 uppercase tracking-wider">
-                    <span className="w-4 h-px bg-gray-900" />
+                  <div className="flex items-center gap-2 text-xs text-neutral-400 uppercase tracking-wider">
+                    <span className="w-4 h-px bg-neutral-900" />
                     {project.location}
                   </div>
                 </div>
@@ -256,7 +256,7 @@ export default function ProjectsSection() {
         </div>
 
         {filtered.length === 0 && (
-          <div className="text-center py-20 text-gray-400 text-lg">
+          <div className="text-center py-20 text-neutral-400 text-lg">
             No projects in this category yet.
           </div>
         )}

@@ -22,16 +22,16 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="h-px w-12 bg-primary" />
-              <span className="text-primary font-semibold uppercase tracking-wider">About Benchmark</span>
+              <div className="h-px w-12 bg-neutral-900" />
+              <span className="text-neutral-900 font-semibold uppercase tracking-wider">About Benchmark</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-8 leading-tight">
               Precision. Trust. <br />
-              <span className="text-gray-400">Uncompromising Craftsmanship.</span>
+              <span className="text-neutral-400">Uncompromising Craftsmanship.</span>
             </h2>
 
-            <div className="space-y-6 text-lg text-gray-600 leading-relaxed mb-10">
+            <div className="space-y-6 text-lg text-neutral-600 leading-relaxed mb-10">
               <p>
                 Benchmark Contracting Group is a high-end, licensed, and insured general contractor based in New York. We specialize in luxury retail, high-end residential, and complex commercial projects.
               </p>
@@ -48,8 +48,8 @@ export default function AboutSection() {
                 "Turnkey Solutions"
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
-                  <span className="text-gray-800 font-medium">{item}</span>
+                  <CheckCircle2 className="w-6 h-6 text-neutral-900 shrink-0" />
+                  <span className="text-neutral-800 font-medium">{item}</span>
                 </div>
               ))}
             </div>
@@ -62,8 +62,8 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="aspect-square md:aspect-[4/5] rounded-sm overflow-hidden relative border border-gray-200 bg-gray-100">
-              <div className="absolute inset-0 bg-primary/10 z-10" />
+            <div className="aspect-square md:aspect-[4/5] rounded-sm overflow-hidden relative border border-neutral-200 bg-neutral-100">
+              <div className="absolute inset-0 bg-black/10 z-10" />
               <img
                 src="/images/project-retail.png"
                 alt="Craftsmanship and precision"
@@ -71,12 +71,12 @@ export default function AboutSection() {
               />
 
               {/* Stats Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-gray-200 p-6 z-20">
+              <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-neutral-200 p-6 z-20">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                   {stats.map((stat, i) => (
                     <div key={i}>
-                      <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
-                      <div className="text-xs text-gray-500 uppercase tracking-wider font-semibold">{stat.label}</div>
+                      <div className="text-3xl font-bold text-neutral-900 mb-1">{stat.value}</div>
+                      <div className="text-xs text-neutral-500 uppercase tracking-wider font-semibold">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -84,8 +84,8 @@ export default function AboutSection() {
             </div>
 
             {/* Decorative Element */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 border-t-2 border-r-2 border-primary hidden md:block" />
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 border-b-2 border-l-2 border-primary hidden md:block" />
+            <div className="absolute -top-6 -right-6 w-32 h-32 border-t-2 border-r-2 border-neutral-900 hidden md:block" />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 border-b-2 border-l-2 border-neutral-900 hidden md:block" />
           </motion.div>
 
         </div>

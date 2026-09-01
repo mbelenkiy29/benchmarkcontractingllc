@@ -21,7 +21,7 @@ export default function ServiceDetailPage() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-neutral-900 mb-4">Service Not Found</h1>
             <Link href="/services">
-              <Button className="bg-neutral-950 hover:bg-neutral-800 !border-neutral-950 text-white">Back to Services</Button>
+              <Button className="bg-primary hover:bg-primary/90 !border-primary text-white">Back to Services</Button>
             </Link>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function ServiceDetailPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact">
-                  <Button className="bg-white hover:bg-neutral-100 !border-neutral-200 text-neutral-900 font-bold h-12 px-8 rounded-sm">
+                  <Button className="bg-primary hover:bg-primary/90 !border-primary text-white font-bold h-12 px-8 rounded-sm">
                     Get a Free Estimate
                   </Button>
                 </Link>
@@ -220,7 +220,7 @@ export default function ServiceDetailPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/contact">
-                    <Button className="bg-white hover:bg-neutral-100 !border-neutral-200 text-neutral-900 font-bold rounded-sm px-6">
+                    <Button className="bg-primary hover:bg-primary/90 !border-primary text-white font-bold rounded-sm px-6">
                       Start Your Project
                     </Button>
                   </Link>
@@ -261,7 +261,7 @@ export default function ServiceDetailPage() {
                     estimate.
                   </p>
                   <Link href="/contact">
-                    <Button className="w-full bg-neutral-950 hover:bg-neutral-800 !border-neutral-950 text-white font-bold rounded-sm">
+                    <Button className="w-full bg-primary hover:bg-primary/90 !border-primary text-white font-bold rounded-sm">
                       Get in Touch
                     </Button>
                   </Link>
