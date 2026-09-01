@@ -13,10 +13,10 @@ const categories = [
 ];
 
 const categoryColors: Record<string, string> = {
-  "Renovation":          "bg-primary text-white",
-  "Surfaces & Finishes": "bg-blue-500/80 text-white",
-  "Construction":        "bg-amber-600/80 text-white",
-  "Outdoor":             "bg-emerald-600/80 text-white",
+  "Renovation":          "bg-black/85 text-white",
+  "Surfaces & Finishes": "bg-gray-700/90 text-white",
+  "Construction":        "bg-gray-500/90 text-white",
+  "Outdoor":             "bg-white/90 text-gray-900",
 };
 
 const projects = [
@@ -129,9 +129,9 @@ export default function ProjectsSection() {
           className="text-center mb-12"
         >
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-px w-12 bg-primary" />
-            <span className="text-primary font-semibold uppercase tracking-wider text-sm">Our Portfolio</span>
-            <div className="h-px w-12 bg-primary" />
+            <div className="h-px w-12 bg-gray-900" />
+            <span className="text-gray-900 font-semibold uppercase tracking-wider text-sm">Our Portfolio</span>
+            <div className="h-px w-12 bg-gray-900" />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Built to Impress. Built to Last.
@@ -149,8 +149,8 @@ export default function ProjectsSection() {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 text-sm font-semibold uppercase tracking-wider rounded-sm border transition-all duration-200 ${
                 activeCategory === cat
-                  ? "bg-primary border-primary text-white"
-                  : "bg-white border-gray-300 text-gray-600 hover:border-primary/60 hover:text-primary"
+                  ? "bg-gray-900 border-gray-900 text-white"
+                  : "bg-white border-gray-300 text-gray-600 hover:border-gray-900 hover:text-gray-900"
               }`}
             >
               {cat}
@@ -167,7 +167,7 @@ export default function ProjectsSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4 }}
-              className="group relative overflow-hidden rounded-sm bg-gray-100 border border-primary/40 hover:border-primary hover:shadow-xl transition-all duration-300 cursor-pointer mb-6"
+              className="group relative overflow-hidden rounded-sm bg-gray-100 border border-gray-900/40 hover:border-gray-900 hover:shadow-xl transition-all duration-300 cursor-pointer mb-6"
             >
               <div className="aspect-[16/7] overflow-hidden relative">
                 <img
@@ -175,7 +175,7 @@ export default function ProjectsSection() {
                   alt={featured.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                 <div className="absolute top-4 left-4 flex items-center gap-2">
                   <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm ${categoryColors[featured.category]}`}>
@@ -189,14 +189,14 @@ export default function ProjectsSection() {
                   <ArrowUpRight className="w-5 h-5 text-white" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 group-hover:text-gray-200 transition-colors">
                     {featured.title}
                   </h3>
                   <p className="text-base text-white/80 leading-relaxed max-w-2xl hidden md:block">
                     {featured.description}
                   </p>
                   <div className="flex items-center gap-2 text-xs text-white/60 uppercase tracking-wider mt-2">
-                    <span className="w-4 h-px bg-primary" />
+                    <span className="w-4 h-px bg-white/70" />
                     {featured.location}
                   </div>
                 </div>
@@ -219,7 +219,7 @@ export default function ProjectsSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.35, delay: i * 0.06 }}
-                className="group relative overflow-hidden rounded-sm bg-white border border-gray-200 hover:border-primary/40 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                className="group relative overflow-hidden rounded-sm bg-white border border-gray-200 hover:border-gray-900/40 hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img
@@ -227,7 +227,7 @@ export default function ProjectsSection() {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute top-4 left-4">
                     <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-sm ${categoryColors[project.category] ?? "bg-white/20 text-white"}`}>
@@ -239,14 +239,14 @@ export default function ProjectsSection() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-sm text-gray-500 mb-3 leading-relaxed">
                     {project.description}
                   </p>
                   <div className="flex items-center gap-2 text-xs text-gray-400 uppercase tracking-wider">
-                    <span className="w-4 h-px bg-primary" />
+                    <span className="w-4 h-px bg-gray-900" />
                     {project.location}
                   </div>
                 </div>
