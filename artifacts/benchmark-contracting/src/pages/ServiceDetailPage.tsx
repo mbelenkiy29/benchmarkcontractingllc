@@ -19,9 +19,9 @@ export default function ServiceDetailPage() {
       <Layout>
         <div className="min-h-screen flex items-center justify-center pt-20">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Service Not Found</h1>
+            <h1 className="text-4xl font-bold text-neutral-900 mb-4">Service Not Found</h1>
             <Link href="/services">
-              <Button className="bg-gray-900 hover:bg-gray-700 !border-gray-900 text-white">Back to Services</Button>
+              <Button className="bg-neutral-950 hover:bg-neutral-800 !border-neutral-950 text-white">Back to Services</Button>
             </Link>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function ServiceDetailPage() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-gray-900 overflow-hidden min-h-[480px] flex">
+      <section className="bg-neutral-950 overflow-hidden min-h-[480px] flex">
         <div className={`flex w-full ${hasImages ? "flex-col md:flex-row" : ""}`}>
           {/* Left — text */}
           <div
@@ -80,7 +80,7 @@ export default function ServiceDetailPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact">
-                  <Button className="bg-white hover:bg-gray-200 !border-gray-200 text-gray-900 font-bold h-12 px-8 rounded-sm">
+                  <Button className="bg-white hover:bg-neutral-100 !border-neutral-200 text-neutral-900 font-bold h-12 px-8 rounded-sm">
                     Get a Free Estimate
                   </Button>
                 </Link>
@@ -178,12 +178,12 @@ export default function ServiceDetailPage() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="h-px w-10 bg-gray-900" />
-                  <span className="text-gray-900 font-semibold uppercase tracking-wider text-sm">
+                  <div className="h-px w-10 bg-neutral-900" />
+                  <span className="text-neutral-900 font-semibold uppercase tracking-wider text-sm">
                     What's Included
                   </span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-8">
                   Everything You Need, Nothing You Don't.
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -194,10 +194,10 @@ export default function ServiceDetailPage() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: i * 0.05 }}
-                      className="flex items-start gap-3 p-4 bg-gray-50 rounded-sm border border-gray-100"
+                      className="flex items-start gap-3 p-4 bg-neutral-50 rounded-sm border border-neutral-100"
                     >
-                      <CheckCircle2 className="w-5 h-5 text-gray-900 shrink-0 mt-0.5" />
-                      <span className="text-gray-700 text-sm font-medium leading-snug">{feature}</span>
+                      <CheckCircle2 className="w-5 h-5 text-neutral-900 shrink-0 mt-0.5" />
+                      <span className="text-neutral-700 text-sm font-medium leading-snug">{feature}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -209,7 +209,7 @@ export default function ServiceDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mt-14 p-8 bg-gray-900 rounded-sm"
+                className="mt-14 p-8 bg-neutral-950 rounded-sm"
               >
                 <h3 className="text-2xl font-bold text-white mb-3">Why Benchmark?</h3>
                 <p className="text-white/70 leading-relaxed mb-6">
@@ -220,7 +220,7 @@ export default function ServiceDetailPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/contact">
-                    <Button className="bg-white hover:bg-gray-200 !border-gray-200 text-gray-900 font-bold rounded-sm px-6">
+                    <Button className="bg-white hover:bg-neutral-100 !border-neutral-200 text-neutral-900 font-bold rounded-sm px-6">
                       Start Your Project
                     </Button>
                   </Link>
@@ -239,35 +239,35 @@ export default function ServiceDetailPage() {
             {/* Sidebar — Other Services */}
             <div className="lg:col-span-1">
               <div className="sticky top-28">
-                <h3 className="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wider">
+                <h3 className="text-sm font-bold text-neutral-900 mb-4 uppercase tracking-wider">
                   Other Services
                 </h3>
                 <div className="flex flex-col gap-1">
                   {otherServices.map((s) => (
                     <Link key={s.slug} href={`/services/${s.slug}`}>
-                      <span className="flex items-center justify-between px-4 py-3 rounded-sm border border-gray-100 hover:border-gray-900/40 hover:bg-gray-50 hover:text-gray-900 transition-all group cursor-pointer text-sm text-gray-600 font-medium">
+                      <span className="flex items-center justify-between px-4 py-3 rounded-sm border border-neutral-100 hover:border-neutral-900/40 hover:bg-neutral-50 hover:text-neutral-900 transition-all group cursor-pointer text-sm text-neutral-600 font-medium">
                         {s.title}
-                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-gray-900" />
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-neutral-900" />
                       </span>
                     </Link>
                   ))}
                 </div>
 
                 {/* CTA Box */}
-                <div className="mt-6 p-6 bg-gray-50 border border-gray-200 rounded-sm">
-                  <div className="text-2xl font-bold text-gray-900 mb-1">Free Estimate</div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                <div className="mt-6 p-6 bg-neutral-50 border border-neutral-200 rounded-sm">
+                  <div className="text-2xl font-bold text-neutral-900 mb-1">Free Estimate</div>
+                  <p className="text-neutral-600 text-sm leading-relaxed mb-4">
                     Ready to get started? Contact us for a no-obligation consultation and detailed project
                     estimate.
                   </p>
                   <Link href="/contact">
-                    <Button className="w-full bg-gray-900 hover:bg-gray-700 !border-gray-900 text-white font-bold rounded-sm">
+                    <Button className="w-full bg-neutral-950 hover:bg-neutral-800 !border-neutral-950 text-white font-bold rounded-sm">
                       Get in Touch
                     </Button>
                   </Link>
                   <a
                     href="tel:3473235535"
-                    className="block text-center mt-3 text-sm text-gray-500 hover:text-gray-900 transition-colors"
+                    className="block text-center mt-3 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
                   >
                     (347) 323-5535
                   </a>

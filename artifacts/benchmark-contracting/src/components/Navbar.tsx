@@ -41,9 +41,9 @@ export default function Navbar() {
   const isServicesActive = location.startsWith("/services");
   const isServiceDetail = location.startsWith("/services/");
   const navAccent = isServiceDetail ? "text-white" : "text-primary";
-  const navHover = isServiceDetail ? "hover:text-gray-300" : "hover:text-primary";
+  const navHover = isServiceDetail ? "hover:text-neutral-300" : "hover:text-primary";
   const navCta = isServiceDetail
-    ? "bg-white hover:bg-gray-200 text-gray-900"
+    ? "bg-white hover:bg-neutral-100 text-neutral-900"
     : "bg-primary hover:bg-primary/90 text-white";
   const desktopLinkClass = (active: boolean) =>
     active ? navAccent : `text-white/80 ${navHover}`;
