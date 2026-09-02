@@ -1,0 +1,1 @@
+- [Site color direction](site-color-direction.md) — Use a neutral black-and-white luxury palette; reserve orange for primary action buttons.

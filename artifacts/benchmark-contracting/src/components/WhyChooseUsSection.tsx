@@ -37,8 +37,6 @@ const differentiators = [
 export default function WhyChooseUsSection() {
   return (
     <section id="why-us" className="py-24 md:py-32 bg-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,102,0,0.04)_0%,_transparent_60%)]" />
-
       <div className="container mx-auto px-4 md:px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,14 +46,14 @@ export default function WhyChooseUsSection() {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-px w-12 bg-primary" />
-            <span className="text-primary font-semibold uppercase tracking-wider text-sm">The Benchmark Difference</span>
-            <div className="h-px w-12 bg-primary" />
+            <div className="h-px w-12 bg-neutral-900" />
+            <span className="text-neutral-900 font-semibold uppercase tracking-wider text-sm">The Benchmark Difference</span>
+            <div className="h-px w-12 bg-neutral-900" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
             Why the Best Choose Benchmark
           </h2>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-500 max-w-2xl mx-auto">
             Architects, developers, and luxury brands trust us to deliver when it counts.
           </p>
         </motion.div>
@@ -71,23 +69,23 @@ export default function WhyChooseUsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group p-8 border border-gray-200 rounded-sm bg-white hover:border-primary/40 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+                className="group p-8 border border-neutral-200 rounded-sm bg-white hover:border-neutral-900/40 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-black/0 to-black/0 group-hover:from-black/5 group-hover:to-transparent transition-all duration-500" />
 
                 <div className="relative">
-                  <div className="w-14 h-14 rounded-sm bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="w-7 h-7 text-primary" />
+                  <div className="w-14 h-14 rounded-sm bg-neutral-100 flex items-center justify-center mb-6 group-hover:bg-neutral-200 transition-colors">
+                    <Icon className="w-7 h-7 text-neutral-900" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-700 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-500 leading-relaxed">
+                  <p className="text-neutral-500 leading-relaxed">
                     {item.description}
                   </p>
 
-                  <div className="mt-6 h-px w-0 bg-primary group-hover:w-full transition-all duration-500" />
+                  <div className="mt-6 h-px w-0 bg-neutral-900 group-hover:w-full transition-all duration-500" />
                 </div>
               </motion.div>
             );

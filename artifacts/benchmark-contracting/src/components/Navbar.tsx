@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoSrc from "@assets/FullLogo_Transparent_NoBuffer_1781838371080.PNG";
+import logoSrc from "@assets/BENCHMARK_LOGO_1785646359770.png";
 import { servicesData } from "@/data/services";
 
 const serviceMenuItems = servicesData.map((s) => ({
@@ -39,6 +39,13 @@ export default function Navbar() {
   };
 
   const isServicesActive = location.startsWith("/services");
+  const navAccent = "text-white";
+  const navHover = "hover:text-neutral-300";
+  const navCta = "bg-primary hover:bg-primary/90 text-white";
+  const desktopLinkClass = (active: boolean) =>
+    active ? navAccent : `text-white/80 ${navHover}`;
+  const mobileLinkClass = (active: boolean) =>
+    active ? navAccent : `text-white/90 ${navHover}`;
 
   return (
     <header
@@ -62,13 +69,13 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
             <Link href="/">
-              <span data-testid="nav-link-home" className={`text-sm font-medium uppercase tracking-wider transition-colors cursor-pointer ${location === "/" ? "text-primary" : "text-white/80 hover:text-primary"}`}>
+              <span data-testid="nav-link-home" className={`text-sm font-medium uppercase tracking-wider transition-colors cursor-pointer ${desktopLinkClass(location === "/")}`}>
                 Home
               </span>
             </Link>
 
             <Link href="/about">
-              <span data-testid="nav-link-about" className={`text-sm font-medium uppercase tracking-wider transition-colors cursor-pointer ${location === "/about" ? "text-primary" : "text-white/80 hover:text-primary"}`}>
+              <span data-testid="nav-link-about" className={`text-sm font-medium uppercase tracking-wider transition-colors cursor-pointer ${desktopLinkClass(location === "/about")}`}>
                 About
               </span>
             </Link>
@@ -78,7 +85,7 @@ export default function Navbar() {
               <Link href="/services">
                 <span
                   data-testid="nav-link-services"
-                  className={`flex items-center gap-1 text-sm font-medium uppercase tracking-wider transition-colors cursor-pointer ${isServicesActive ? "text-primary" : "text-white/80 hover:text-primary"}`}
+                  className={`flex items-center gap-1 text-sm font-medium uppercase tracking-wider transition-colors cursor-pointer ${desktopLinkClass(isServicesActive)}`}
                 >
                   Services
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
@@ -95,7 +102,7 @@ export default function Navbar() {
                   <div className="py-2 max-h-[70vh] overflow-y-auto">
                     {serviceMenuItems.map((item) => (
                       <Link key={item.href} href={item.href}>
-                        <span className={`block px-5 py-2.5 text-sm transition-colors cursor-pointer hover:bg-white/5 hover:text-primary ${location === item.href ? "text-primary bg-white/5" : "text-white/75"}`}>
+                        <span className={`block px-5 py-2.5 text-sm transition-colors cursor-pointer hover:bg-white/5 ${navHover} ${location === item.href ? `${navAccent} bg-white/5` : "text-white/75"}`}>
                           {item.label}
                         </span>
                       </Link>
@@ -106,19 +113,19 @@ export default function Navbar() {
             </div>
 
             <Link href="/projects">
-              <span data-testid="nav-link-projects" className={`text-sm font-medium uppercase tracking-wider transition-colors cursor-pointer ${location === "/projects" ? "text-primary" : "text-white/80 hover:text-primary"}`}>
+              <span data-testid="nav-link-projects" className={`text-sm font-medium uppercase tracking-wider transition-colors cursor-pointer ${desktopLinkClass(location === "/projects")}`}>
                 Projects
               </span>
             </Link>
 
             <Link href="/contact">
-              <span data-testid="nav-link-contact" className={`text-sm font-medium uppercase tracking-wider transition-colors cursor-pointer ${location === "/contact" ? "text-primary" : "text-white/80 hover:text-primary"}`}>
+              <span data-testid="nav-link-contact" className={`text-sm font-medium uppercase tracking-wider transition-colors cursor-pointer ${desktopLinkClass(location === "/contact")}`}>
                 Contact
               </span>
             </Link>
 
             <Link href="/contact">
-              <Button data-testid="nav-cta" className="bg-primary hover:bg-primary/90 text-white font-semibold ml-2 rounded-sm px-6">
+              <Button data-testid="nav-cta" className={`${navCta} font-semibold ml-2 rounded-sm px-6`}>
                 Get a Free Estimate
               </Button>
             </Link>
@@ -134,22 +141,22 @@ export default function Navbar() {
       {/* Mobile Nav */}
       {mobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 shadow-2xl p-6 flex flex-col gap-5 animate-in slide-in-from-top-2 max-h-[80vh] overflow-y-auto">
-          <Link href="/"><span className={`text-lg font-medium block cursor-pointer ${location === "/" ? "text-primary" : "text-white/90 hover:text-primary"}`}>Home</span></Link>
-          <Link href="/about"><span className={`text-lg font-medium block cursor-pointer ${location === "/about" ? "text-primary" : "text-white/90 hover:text-primary"}`}>About</span></Link>
+          <Link href="/"><span className={`text-lg font-medium block cursor-pointer ${mobileLinkClass(location === "/")}`}>Home</span></Link>
+          <Link href="/about"><span className={`text-lg font-medium block cursor-pointer ${mobileLinkClass(location === "/about")}`}>About</span></Link>
 
           <div>
             <button
               onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-              className={`flex items-center justify-between w-full text-lg font-medium ${isServicesActive ? "text-primary" : "text-white/90"}`}
+              className={`flex items-center justify-between w-full text-lg font-medium ${isServicesActive ? navAccent : "text-white/90"}`}
             >
               Services
-              <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180 text-primary" : ""}`} />
+              <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${mobileServicesOpen ? `rotate-180 ${navAccent}` : ""}`} />
             </button>
             {mobileServicesOpen && (
               <div className="mt-3 ml-4 flex flex-col gap-2 border-l border-white/10 pl-4">
                 {serviceMenuItems.map((item) => (
                   <Link key={item.href} href={item.href}>
-                    <span className={`text-sm block cursor-pointer transition-colors ${location === item.href ? "text-primary" : "text-white/70 hover:text-primary"}`}>
+                    <span className={`text-sm block cursor-pointer transition-colors ${location === item.href ? navAccent : `text-white/70 ${navHover}`}`}>
                       {item.label}
                     </span>
                   </Link>
@@ -158,10 +165,10 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/projects"><span className={`text-lg font-medium block cursor-pointer ${location === "/projects" ? "text-primary" : "text-white/90 hover:text-primary"}`}>Projects</span></Link>
-          <Link href="/contact"><span className={`text-lg font-medium block cursor-pointer ${location === "/contact" ? "text-primary" : "text-white/90 hover:text-primary"}`}>Contact</span></Link>
+          <Link href="/projects"><span className={`text-lg font-medium block cursor-pointer ${mobileLinkClass(location === "/projects")}`}>Projects</span></Link>
+          <Link href="/contact"><span className={`text-lg font-medium block cursor-pointer ${mobileLinkClass(location === "/contact")}`}>Contact</span></Link>
           <Link href="/contact">
-            <Button className="bg-primary hover:bg-primary/90 text-white font-semibold w-full mt-2 rounded-sm py-6 text-lg">Get a Free Estimate</Button>
+            <Button className={`${navCta} font-semibold w-full mt-2 rounded-sm py-6 text-lg`}>Get a Free Estimate</Button>
           </Link>
         </div>
       )}
