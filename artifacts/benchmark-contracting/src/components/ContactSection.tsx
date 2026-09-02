@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Paperclip, X, FileImage } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
@@ -15,9 +15,35 @@ const projectTypes = [
   "Other",
 ];
 
+const MAX_FILES = 10;
+// Vercel serverless request bodies cap at 4.5 MB; base64 inflates by ~33%,
+// so keep the raw total under ~3 MB.
+const MAX_TOTAL_BYTES = 3 * 1024 * 1024;
+
+const totalSize = (list: File[]) => list.reduce((sum, f) => sum + f.size, 0);
+
+const fileToBase64 = (file: File) =>
+  new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      if (typeof result !== "string") {
+        reject(new Error("Unexpected file reader result"));
+        return;
+      }
+      // Strip the "data:<mime>;base64," prefix.
+      resolve(result.slice(result.indexOf(",") + 1));
+    };
+    reader.onerror = () => reject(reader.error ?? new Error("Failed to read file"));
+    reader.readAsDataURL(file);
+  });
+
 export default function ContactSection() {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
+  const [files, setFiles] = useState<File[]>([]);
+  const [dragOver, setDragOver] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -32,29 +58,91 @@ export default function ContactSection() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const addFiles = (incoming: FileList | null) => {
+    if (!incoming) return;
+    const allowed = Array.from(incoming).filter((f) =>
+      f.type.startsWith("image/") || f.type === "application/pdf"
+    );
+    setFiles((prev) => {
+      const existing = new Set(prev.map((f) => f.name + f.size));
+      const next = [...prev];
+      for (const file of allowed) {
+        if (existing.has(file.name + file.size)) continue;
+        if (next.length >= MAX_FILES) {
+          toast({
+            title: `You can attach up to ${MAX_FILES} files.`,
+            variant: "destructive",
+          });
+          break;
+        }
+        if (totalSize(next) + file.size > MAX_TOTAL_BYTES) {
+          toast({
+            title: "Attachments are too large.",
+            description: "Keep the total under 3 MB, or email larger files directly.",
+            variant: "destructive",
+          });
+          break;
+        }
+        next.push(file);
+      }
+      return next;
+    });
+  };
+
+  const removeFile = (index: number) => {
+    setFiles((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragOver(false);
+    addFiles(e.dataTransfer.files);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
       toast({ title: "Please fill in required fields.", variant: "destructive" });
       return;
     }
+    if (totalSize(files) > MAX_TOTAL_BYTES) {
+      toast({
+        title: "Attachments are too large.",
+        description: "Keep the total under 3 MB, or email larger files directly.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setLoading(true);
     try {
+      const attachments = await Promise.all(
+        files.map(async (file) => ({
+          filename: file.name,
+          content: await fileToBase64(file),
+          contentType: file.type || "application/octet-stream",
+        }))
+      );
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(
+          attachments.length > 0 ? { ...form, attachments } : form
+        ),
       });
       if (!res.ok) throw new Error("Failed to send");
+
       toast({
         title: "Request submitted!",
         description: "We'll be in touch within one business day.",
       });
       setForm({ name: "", email: "", phone: "", projectType: "", message: "" });
+      setFiles([]);
     } catch {
       toast({
         title: "Something went wrong.",
-        description: "Please try again or call us directly.",
+        description: "Please try again or call us directly at (347) 323-5535.",
         variant: "destructive",
       });
     } finally {
@@ -63,11 +151,10 @@ export default function ContactSection() {
   };
 
   const inputClass =
-    "w-full bg-white border border-gray-300 text-gray-900 placeholder-gray-400 rounded-sm px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200";
+    "w-full bg-white border border-neutral-300 text-neutral-900 placeholder-neutral-400 rounded-sm px-4 py-3 text-sm outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 transition-all duration-200";
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-gray-50 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,102,0,0.04)_0%,_transparent_60%)]" />
+    <section id="contact" className="py-24 md:py-32 bg-neutral-50 relative overflow-hidden">
 
       <div className="container mx-auto px-4 md:px-6 relative">
         <motion.div
@@ -78,14 +165,14 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-px w-12 bg-primary" />
-            <span className="text-primary font-semibold uppercase tracking-wider text-sm">Get in Touch</span>
-            <div className="h-px w-12 bg-primary" />
+            <div className="h-px w-12 bg-neutral-900" />
+            <span className="text-neutral-900 font-semibold uppercase tracking-wider text-sm">Get in Touch</span>
+            <div className="h-px w-12 bg-neutral-900" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
             Ready to Build Something Great?
           </h2>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-500 max-w-2xl mx-auto">
             Tell us about your project. We'll respond within one business day with a plan.
           </p>
         </motion.div>
@@ -100,18 +187,18 @@ export default function ContactSection() {
             className="lg:col-span-2 flex flex-col gap-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Let's Talk</h3>
+              <h3 className="text-2xl font-bold text-neutral-900 mb-6">Let's Talk</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-sm bg-neutral-100 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-neutral-900" />
                   </div>
                   <div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wider mb-1 font-semibold">Phone</div>
+                    <div className="text-xs text-neutral-400 uppercase tracking-wider mb-1 font-semibold">Phone</div>
                     <a
                       href="tel:3473235535"
                       data-testid="contact-phone"
-                      className="text-gray-900 hover:text-primary transition-colors font-medium text-lg"
+                      className="text-neutral-900 hover:text-neutral-600 transition-colors font-medium text-lg"
                     >
                       (347) 323-5535
                     </a>
@@ -119,15 +206,15 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-sm bg-neutral-100 flex items-center justify-center shrink-0">
+                    <Mail className="w-5 h-5 text-neutral-900" />
                   </div>
                   <div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wider mb-1 font-semibold">Email</div>
+                    <div className="text-xs text-neutral-400 uppercase tracking-wider mb-1 font-semibold">Email</div>
                     <a
                       href="mailto:info@benchmarkcontractingllc.com"
                       data-testid="contact-email"
-                      className="text-gray-900 hover:text-primary transition-colors font-medium"
+                      className="text-neutral-900 hover:text-neutral-600 transition-colors font-medium"
                     >
                       info@benchmarkcontractingllc.com
                     </a>
@@ -135,21 +222,21 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-sm bg-neutral-100 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-neutral-900" />
                   </div>
                   <div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wider mb-1 font-semibold">Service Area</div>
-                    <p className="text-gray-900 font-medium">New York City & Surrounding Areas</p>
-                    <p className="text-gray-500 text-sm mt-1">Manhattan · Brooklyn · Queens · The Bronx · Staten Island · Westchester</p>
+                    <div className="text-xs text-neutral-400 uppercase tracking-wider mb-1 font-semibold">Service Area</div>
+                    <p className="text-neutral-900 font-medium">New York City & Surrounding Areas</p>
+                    <p className="text-neutral-500 text-sm mt-1">Manhattan · Brooklyn · Queens · The Bronx · Staten Island · Westchester</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="border border-gray-200 rounded-sm p-6 bg-white shadow-sm">
-              <div className="text-3xl font-bold text-primary mb-1">Free Estimates</div>
-              <p className="text-gray-500 text-sm leading-relaxed">
+            <div className="border border-neutral-200 rounded-sm p-6 bg-white shadow-sm">
+              <div className="text-3xl font-bold text-neutral-900 mb-1">Free Estimates</div>
+              <p className="text-neutral-500 text-sm leading-relaxed">
                 Every project starts with a no-obligation consultation and detailed cost estimate. No guesswork, no surprises.
               </p>
             </div>
@@ -166,12 +253,12 @@ export default function ContactSection() {
             <form
               onSubmit={handleSubmit}
               data-testid="contact-form"
-              className="border border-gray-200 rounded-sm p-8 bg-white shadow-sm space-y-5"
+              className="border border-neutral-200 rounded-sm p-8 bg-white shadow-sm space-y-5"
             >
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
-                    Full Name <span className="text-primary">*</span>
+                  <label className="block text-xs text-neutral-500 uppercase tracking-wider mb-2 font-semibold">
+                    Full Name <span className="text-neutral-900">*</span>
                   </label>
                   <input
                     name="name"
@@ -183,8 +270,8 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
-                    Email Address <span className="text-primary">*</span>
+                  <label className="block text-xs text-neutral-500 uppercase tracking-wider mb-2 font-semibold">
+                    Email Address <span className="text-neutral-900">*</span>
                   </label>
                   <input
                     name="email"
@@ -200,7 +287,7 @@ export default function ContactSection() {
 
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
+                  <label className="block text-xs text-neutral-500 uppercase tracking-wider mb-2 font-semibold">
                     Phone Number
                   </label>
                   <input
@@ -214,7 +301,7 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
+                  <label className="block text-xs text-neutral-500 uppercase tracking-wider mb-2 font-semibold">
                     Project Type
                   </label>
                   <select
@@ -235,8 +322,8 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
-                  Project Description <span className="text-primary">*</span>
+                <label className="block text-xs text-neutral-500 uppercase tracking-wider mb-2 font-semibold">
+                  Project Description <span className="text-neutral-900">*</span>
                 </label>
                 <textarea
                   name="message"
@@ -247,6 +334,58 @@ export default function ContactSection() {
                   className={inputClass + " resize-none"}
                   data-testid="input-message"
                 />
+              </div>
+
+              {/* File Upload */}
+              <div>
+                <label className="block text-xs text-neutral-500 uppercase tracking-wider mb-2 font-semibold">
+                  Upload Documents / Photos <span className="text-neutral-400 font-normal normal-case">(optional — helps us estimate)</span>
+                </label>
+                <div
+                  onClick={() => fileInputRef.current?.click()}
+                  onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+                  onDragLeave={() => setDragOver(false)}
+                  onDrop={handleDrop}
+                  className={`border-2 border-dashed rounded-sm px-4 py-6 flex flex-col items-center gap-2 cursor-pointer transition-colors duration-200 ${
+                    dragOver
+                      ? "border-neutral-900 bg-neutral-50"
+                      : "border-neutral-300 hover:border-neutral-900/50 hover:bg-neutral-50"
+                  }`}
+                >
+                  <Paperclip className="w-5 h-5 text-neutral-400" />
+                  <p className="text-sm text-neutral-500 text-center">
+                    <span className="text-neutral-900 font-semibold">Click to browse</span> or drag & drop files here
+                  </p>
+                  <p className="text-xs text-neutral-400">Images (JPG, PNG, HEIC) and PDFs accepted · up to {MAX_FILES} files, 3 MB total</p>
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    multiple
+                    accept="image/*,.pdf"
+                    className="hidden"
+                    onChange={(e) => addFiles(e.target.files)}
+                  />
+                </div>
+
+                {files.length > 0 && (
+                  <ul className="mt-3 space-y-2">
+                    {files.map((file, i) => (
+                      <li key={i} className="flex items-center gap-3 bg-neutral-50 border border-neutral-200 rounded-sm px-3 py-2">
+                        <FileImage className="w-4 h-4 text-neutral-900 shrink-0" />
+                        <span className="text-sm text-neutral-700 truncate flex-1">{file.name}</span>
+                        <span className="text-xs text-neutral-400 shrink-0">{(file.size / 1024).toFixed(0)} KB</span>
+                        <button
+                          type="button"
+                          onClick={() => removeFile(i)}
+                          className="text-neutral-400 hover:text-red-500 transition-colors shrink-0"
+                          aria-label="Remove file"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
               <Button
@@ -265,7 +404,7 @@ export default function ContactSection() {
                 )}
               </Button>
 
-              <p className="text-center text-xs text-gray-400">
+              <p className="text-center text-xs text-neutral-400">
                 We respond within 1 business day. No commitment required.
               </p>
             </form>
